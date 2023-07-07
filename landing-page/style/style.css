@@ -1,10 +1,23 @@
 * {
   box-sizing: border-box;
-  font-family: 'Roboto';
 }
 
 body {
   display: flex;
   flex-direction: column;
   margin: 0;
+}
+
+.heading {
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+button {
+  font-family: 'Roboto';
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 100px;
+  cursor: pointer;
+  padding: 8px 24px;
+  width: fit-content;
 }
