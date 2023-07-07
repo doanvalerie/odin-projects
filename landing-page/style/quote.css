@@ -1,0 +1,19 @@
+.quote-container {
+  background-color: #E5E7EB;
+  padding: 120px 160px;
+}
+
+.quote {
+  font-size: 36px;
+  font-style: italic;
+  font-weight: lighter;
+  color: #1F2937;
+  margin-bottom: 10px;
+}
+
+.cite-author {
+  font-size: 24px;
+  text-align: right;
+  font-weight: 500;
+  margin: 10px 60px;
+}
