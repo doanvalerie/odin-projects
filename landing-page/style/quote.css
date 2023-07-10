@@ -1,12 +1,14 @@
 .quote-container {
   display: flex;
   align-items: center;
+  overflow: auto; 
   padding: 0 160px;
   background-color: rgb(39, 38, 38);
 }
 
 .quote-content {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   padding: 100px;
   gap: 16px;

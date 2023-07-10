@@ -43,8 +43,9 @@
 
 .hero-container {
   display: flex;
-  justify-content: center;
   align-items: center;
+  flex-wrap: nowrap;
+  overflow: auto; 
   gap: 50px;
   padding: 80px 160px;
 }
