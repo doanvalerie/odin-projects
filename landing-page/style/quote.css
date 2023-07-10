@@ -1,19 +1,28 @@
 .quote-container {
-  background-color: #E5E7EB;
-  padding: 120px 160px;
+  display: flex;
+  align-items: center;
+  padding: 0 160px;
+  background-color: rgb(39, 38, 38);
 }
 
-.quote {
+.quote-content {
+  display: flex;
+  flex-direction: column;
+  padding: 100px;
+  gap: 16px;
+}
+
+.quotation {
   font-size: 36px;
-  font-style: italic;
   font-weight: lighter;
-  color: #1F2937;
   margin-bottom: 10px;
+  color: rgb(249, 250, 248);
 }
 
-.cite-author {
-  font-size: 24px;
+.quote-author {
   text-align: right;
+  font-size: 24px;
   font-weight: 500;
   margin: 10px 60px;
+  color: rgb(249, 250, 248);
 }

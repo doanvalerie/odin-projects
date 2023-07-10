@@ -1,24 +1,29 @@
 .action-container {
   display: flex;
   justify-content: space-between;
-  margin: 100px 120px;
-  padding: 50px 70px;
+  gap: 24px;
   border-radius: 10px;
-  background-color: #3882F6;
+  height: fit-content;
+  margin: 100px 120px;
+  padding: 52px 64px;
+  box-shadow: 2px 2px 8px rgb(47, 47, 47);
+  background-color: rgb(253, 213, 91);
 }
 
 .action-container .main-text {
-  font-size: 20px;
+  font-size: 28px;
   font-weight: bold;
-  color: #F9FAF8;
+  color: rgb(81, 80, 80);
   margin-bottom: 4px;
 }
 
 .action-container .secondary-text {
-  font-weight: lighter;
-  color: #F9FAF8;
+  font-size: 20px;
+  color: rgb(81, 80, 80);
 }
 
 .sign-up-action {
-  border: 1px solid #F9FAF8;
+  border: 1px solid rgb(236, 193, 65);
+  color: rgb(243, 167, 37);
+  background-color: rgb(39, 38, 38);
 }

@@ -3,20 +3,22 @@
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-  background-color: rgb(253, 213, 91);
   padding-bottom: 48px;
+  background-color: rgb(253, 213, 91);
 }
 
-.info-container .heading {
+.info-title {
   text-align: center;
   font-size: 44px;
   font-weight: bolder;
-  color: #1F2937;
   padding: 48px;
+  color: rgb(45, 46, 48);
 }
 
-.content {
+.info-content {
   display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 40px;
 }
 
@@ -26,9 +28,16 @@
   align-items: center;
   text-align: center;
   width: 380px;
-  padding: 20px 50px;
-  background-color: rgb(255, 252, 225);
+  padding: 50px 50px;
   box-shadow: 0 0 10px rgb(0, 0, 0, 0.1);
+  background-color: rgb(255, 252, 225);
+}
+
+.minion-name {
+  font-size: 44px;
+  font-weight: bolder;
+  color: rgb(143, 8, 8);
+  margin-bottom: 16px;
 }
 
 .info-container img {
@@ -40,14 +49,7 @@
 }
 
 .caption {
-  font-family: 'Roboto', sans-serif;
   font-size: 22px;
   font-weight: 500;
   color: rgb(81, 80, 80);
-}
-
-.info-item .title {
-  font-size: 44px;
-  color: rgb(143, 8, 8);
-  margin-bottom: 10px;
 }
