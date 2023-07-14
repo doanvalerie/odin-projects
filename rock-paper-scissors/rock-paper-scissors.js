@@ -10,6 +10,14 @@ function getComputerChoice() {
 	return choices[index];
 }
 
+/*
+ *	Prompt the user to enter "rock", "paper", or "scissors."
+ *
+ *	@return {string} "rock", "paper", or "scissors" representing player selection
+ */
+function getPlayerChoice() {
+	return prompt("Choose your weapon!").toLowerCase();
+}
 
 /*
  *	Based on the computer and player selection, determine if the player
@@ -57,9 +65,7 @@ function checkPlayerResults(computerSelection, playerSelection) {
  *	@return roundResults {object} container for properties of the player result and announcement
  */
 function playRound(computerSelection, playerSelection) {
-	computerSelection = computerSelection.toLowerCase();
-	let playerSelection = prompt("Choose your weapon!").toLowerCase();
-
+	console.log(playerSelection);
 	let roundResult = {
 		playerResult: "",
 		announcement: "",
@@ -69,10 +75,13 @@ function playRound(computerSelection, playerSelection) {
 	switch (roundResult.playerResult) {
 		case "tie":
 			roundResult.announcement =  "Tied game!";
+			break;
 		case "loser":
 			roundResult.announcement = `You lost! ${computerSelection} beats ${playerSelection}.`;
+			break;
 		case "winner":
 			roundResult.announcement = `You win! ${playerSelection} beats ${computerSelection}.`;
+			break;
 	}
 
 	console.log(roundResult.announcement);
@@ -87,7 +96,7 @@ function game() {
 	let playerWins = 0;
 
 	for (let i = 0; i < 5; ++i) {
-		let roundResult = playRound(getComputerChoice(), playerSelection);
+		let roundResult = playRound(getComputerChoice(), getPlayerChoice());
 		
 		switch (roundResult.playerResult) {
 			case "winner":
