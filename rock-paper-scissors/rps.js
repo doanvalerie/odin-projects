@@ -128,11 +128,11 @@ function getPlayerResults(weaponChoices, wins) {
 function getRoundAnnouncement(weaponChoices, playerResult) {
 	switch (playerResult) {
 		case "tie":
-			return "Tied game!";
+			return '<span class="emphasis">tie!</span> face a rematch to settle the score.';
 		case "loser":
-			return `defeat! computer's ${weaponChoices.computer} demolishes your ${weaponChoices.player}.`;
+			return `<span class="emphasis">defeat!</span> computer's ${weaponChoices.computer} demolishes your ${weaponChoices.player}.`;
 		case "winner":
-			return `triumph! your ${weaponChoices.player} defeats computer's ${weaponChoices.computer}.`;
+			return `<span class="emphasis">triumph!</span> your ${weaponChoices.player} defeats computer's ${weaponChoices.computer}.`;
 	}
 }
 
@@ -146,23 +146,29 @@ function updateScoreBoard(wins) {
 
 function sendAnnouncement(string) {
 	const announcement = document.querySelector(".announcement");
-	announcement.textContent = string;
+	announcement.innerHTML = string;
 }
 
 function checkGameOver(wins) {
 	if (wins.computer == 5 || wins.player == 5) {
 		announceFinalWinner(wins);
+		finalizeScoreBoard(wins);
 		terminateGame();
 	}
 }
 
 function announceFinalWinner(wins) {
 	if (wins.player > wins.computer) {
-		sendAnnouncement("game over. you won!");
+		sendAnnouncement('game over! <span class="emphasis">you won :)</span>');
 	}
 	else {
-		sendAnnouncement("game over. you lost!");
+		sendAnnouncement('game over! <span class="emphasis">you lost :(</span>');
 	}
+}
+
+function finalizeScoreBoard(wins) {
+	const winnerScoreBoard = document.querySelector(`.${wins.player == 5 ? "player" : "computer"} .scoreboard`);
+	winnerScoreBoard.classList.add("emphasis");
 }
 
 function terminateGame() {
