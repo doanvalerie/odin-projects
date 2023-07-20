@@ -1,0 +1,35 @@
+* {
+  box-sizing: border-box;
+}
+
+.header {
+  text-align: center;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+}
+
+.grid {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 600px;
+  height: 600px;
+  border: 1px black solid;
+}
+
+.row {
+  display: flex;
+}
+
+.square {
+  border: 0.5px rgb(34, 34, 35) solid;
+  cursor: pointer;
+}
+
+.color {
+  background-color: blue;
+}
