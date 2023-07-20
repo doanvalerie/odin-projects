@@ -7,6 +7,7 @@ body {
   justify-content: center;
   align-items: center;
   gap: 42px;
+  animation: animate 2s linear forwards;
 }
 
 .title {
@@ -32,6 +33,10 @@ button:hover {
   font-weight: bold;
   text-align: center;
   color: rgb(73, 68, 68);
+}
+
+.emphasis {
+  color: rgb(228, 90, 51);
 }
 
 .player,
@@ -86,7 +91,13 @@ button:hover {
   height: 250px;
   padding: 20px;
   margin: 30px;
+  cursor: pointer;
 }
+
+/* .card:hover {
+  background-color: rgb(249, 225, 206);
+  transition: 0.30s;
+} */
 
 img.weapon {
   width: 150px;
