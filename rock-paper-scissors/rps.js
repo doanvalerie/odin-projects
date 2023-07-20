@@ -13,9 +13,9 @@ function playGame() {
 	enableCards();
 	playRound(wins);
 
-	const results = document.querySelectorAll('.scoreboard');
-	results.forEach((score) => 
-		score.addEventListener('DOMSubtreeModified', () => checkGameOver(wins))
+	const results = document.querySelectorAll(".scoreboard");
+	results.forEach(score => 
+		score.addEventListener("DOMSubtreeModified", () => checkGameOver(wins))
 	);
 }
 
@@ -51,7 +51,7 @@ function createNewScoreBoard() {
 function enableCards() {
 	const playerWeapons = document.querySelectorAll(".player .card");
 	playerWeapons.forEach((playerWeapon) => 
-		playerWeapon.setAttribute('style', 'pointer-events: auto;')
+		playerWeapon.setAttribute("style", "pointer-events: auto;")
 	);
 }
 
@@ -167,18 +167,18 @@ function announceFinalWinner(wins) {
 
 function terminateGame() {
 	const playerWeapons = document.querySelectorAll(".player .card");
-	playerWeapons.forEach((playerWeapon) => 
-		playerWeapon.setAttribute('style', 'pointer-events: none;')
+	playerWeapons.forEach(playerWeapon => 
+		playerWeapon.setAttribute("style", "pointer-events: none;")
 	);
 }
 
 function processTransition(computerWeapon, playerWeapon) {
-	playerWeapon.classList.add('weapon-selected');
-	computerWeapon.classList.add('weapon-selected');
-	playerWeapon.addEventListener('transitionend', removeWeaponTransition);
-	computerWeapon.addEventListener('transitionend', removeWeaponTransition);
-}
+	const cards = document.querySelectorAll(".card");
+	cards.forEach(card => card.classList.remove("weapon-selected"));
 
-function removeWeaponTransition(e) {
-	e.target.classList.remove('weapon-selected');
+	playerWeapon.classList.add("weapon-selected");
+	computerWeapon.classList.add("weapon-selected");
+	
+	playerWeapon.addEventListener("transitionend", () => playerWeapon.classList.remove("weapon-selected"));
+	computerWeapon.addEventListener("transitionend", () => computerWeapon.classList.remove("weapon-selected"));
 }
