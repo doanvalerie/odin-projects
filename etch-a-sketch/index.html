@@ -3,16 +3,22 @@
   <meta charset="utf-8">
   <title>Etch-A-Sketch</title>
   <link rel="stylesheet" href="./style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bungee&family=Press+Start+2P&family=Roboto+Mono&family=Unica+One&display=swap" rel="stylesheet">
   <script src="./main.js" defer></script>
 </head>
 <body>
-  <div class="header">etch-a-sketch</div>
+  <h1 class="header">etch-a-sketch</h1>
   <div class="content">
     <div class="editor">
-      <input class="colorpicker" type="color">color</input>
-      <div class="eraser">Eraser</div>
+      <input id="color-display" type="color"></input>
+      <button class="color-selector">color</button>
+      <button class="rainbow-selector">rainbow</button>
+      <button class="eraser-selector">Eraser</button>
       <input class="scale" type="range" min="10" max="100">
     </div>
     <div class="grid"></div>
   </div>
+  <div class="footer">crafted by doanvalerie</div>
 </body>

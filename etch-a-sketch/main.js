@@ -1,32 +1,102 @@
-let color = "black";
-let dimension = 16;
 setup();
 
 function setup() {
-	createGrid();
-	pickColor();
-	pickScale();
-	setEraser();
+	const gridConfig = {
+		dimension: 16,
+		color: "rgb(0, 0, 0)"
+	};
+
+	createGrid(gridConfig);
+	setupEventListeners(gridConfig);
 }
 
-function createGrid() {
+function createGrid(gridConfig) {
 	const grid = document.querySelector(".grid");
 	const gridStyle = getComputedStyle(grid);
 	const width = +gridStyle.width.replace(/\D/g, '');
-	const pixels = width / dimension;
+	const pixels = width / gridConfig.dimension;
 
-	for (let i = 0; i < dimension; ++i) {
-		const row = document.createElement("div");
-		row.classList.add("row");
-		for (let j = 0; j < dimension; ++j) {
-			const square = document.createElement("div");
-			square.setAttribute("style", `width: ${pixels}px; height: ${pixels}px;`);
-			square.classList.add("square");
-			row.appendChild(square);
+	for (let i = 0; i < gridConfig.dimension; ++i) {
+		const row = createGridRow();
+		for (let j = 0; j < gridConfig.dimension; ++j) {
+			const cell = createGridCell(pixels);
+			row.appendChild(cell);
 		}
 		grid.appendChild(row);
 	}
-	monitorColor();
+}
+
+function createGridRow() {
+	const row = document.createElement("div");
+	row.classList.toggle("grid-row");
+	return row;
+}
+
+function createGridCell(pixels) {
+	const cell = document.createElement("div");
+	cell.style.width = `${pixels}px`;
+	cell.style.height = `${pixels}px`;
+	cell.style.background = "rgb(255, 255, 255)";
+	cell.classList.toggle("grid-cell");
+	return cell;
+}
+
+function setupEventListeners(gridConfig) {
+	const colorDisplay = document.querySelector("#color-display");
+	const colorSelector = document.querySelector(".color-selector");
+	const rainbowSelector = document.querySelector(".rainbow-selector");
+	const eraserSelector = document.querySelector(".eraser-selector");
+	const cells = document.querySelectorAll(".grid-cell");
+
+	function setCellPaint(e) {
+		e.target.style.backgroundColor = gridConfig.color;
+	}
+
+	function setRandomCellPaint() {
+		gridConfig.color = "#" + Math.floor(Math.random()*16777215).toString(16);
+		handleCellPaint();
+	}
+
+	function handleColorSelector() {
+		colorDisplay.click();
+		colorDisplay.addEventListener("change", () => {
+			gridConfig.color = colorDisplay.value;
+			cells.forEach(cell => {
+				cell.removeEventListener("mouseover", setRandomCellPaint);
+				cell.addEventListener("mouseover", setCellPaint);
+			});
+		})
+	}
+
+	function handleRainbowSelector() {
+		cells.forEach(cell => 
+			cell.addEventListener("mouseover", setRandomCellPaint)	
+		);
+	}
+
+	function handleEraserSelector() {
+		cells.forEach(cell => {
+			cell.removeEventListener("mouseover", setCellPaint);
+			cell.removeEventListener("mouseover", setRandomCellPaint);
+			cell.addEventListener("click", () => { 
+				cell.style.backgroundColor = "rgb(255, 255, 255)";
+			});
+		});
+	}
+
+	colorSelector.addEventListener("click", handleColorSelector);
+	rainbowSelector.addEventListener("click", handleRainbowSelector);
+	eraserSelector.addEventListener("click", handleEraserSelector);
+}
+
+function setGridScale(gridConfig) {
+	const scale = document.querySelector(".scale");
+	scale.addEventListener("change", () => {
+		gridConfig.dimension = scale.value;
+		resetGrid();
+		createGrid(gridConfig);
+		colorGrid(gridConfig);
+	});
 }
 
 function resetGrid() {
@@ -34,33 +104,4 @@ function resetGrid() {
 	while (grid.firstChild) {
         grid.removeChild(grid.firstChild);
     }
-}
-
-function monitorColor() {
-	const squares = document.querySelectorAll(".square");
-	squares.forEach(square => 
-		square.addEventListener("mouseover", () => { 
-			square.style.backgroundColor = color;
-		})
-	);
-}
-
-function pickColor() {
-	const colorPicker = document.querySelector(".colorpicker");
-	colorPicker.addEventListener("change", () => color = colorPicker.value);
-}
-
-function pickScale() {
-	const scale = document.querySelector(".scale");
-	scale.addEventListener("change", () => {
-		console.log("test");
-		dimension = scale.value;
-		resetGrid();
-		createGrid();
-	});
-}
-
-function setEraser() {
-	const eraser = document.querySelector(".eraser");
-	eraser.addEventListener("click", () => color = "white");
 }
