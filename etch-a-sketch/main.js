@@ -8,6 +8,7 @@ function setup() {
 
 	createGrid(gridConfig);
 	setupEventListeners(gridConfig);
+	setupScaleListener(gridConfig);
 }
 
 function createGrid(gridConfig) {
@@ -42,22 +43,22 @@ function createGridCell(pixels) {
 }
 
 function setupEventListeners(gridConfig) {
-	const colorDisplay = document.querySelector("#color-display");
 	const colorSelector = document.querySelector(".color-selector");
 	const rainbowSelector = document.querySelector(".rainbow-selector");
 	const eraserSelector = document.querySelector(".eraser-selector");
-	const cells = document.querySelectorAll(".grid-cell");
+	const colorDisplay = document.querySelector("#color-display");
 
 	function setCellPaint(e) {
 		e.target.style.backgroundColor = gridConfig.color;
 	}
 
 	function setRandomCellPaint() {
-		gridConfig.color = "#" + Math.floor(Math.random()*16777215).toString(16);
-		handleCellPaint();
+		gridConfig.color = "#" + Math.floor(Math.random() * 16777215).toString(16);
 	}
 
 	function handleColorSelector() {
+		const cells = document.querySelectorAll(".grid-cell");
+	
 		colorDisplay.click();
 		colorDisplay.addEventListener("change", () => {
 			gridConfig.color = colorDisplay.value;
@@ -69,12 +70,17 @@ function setupEventListeners(gridConfig) {
 	}
 
 	function handleRainbowSelector() {
-		cells.forEach(cell => 
+		const cells = document.querySelectorAll(".grid-cell");
+
+		cells.forEach(cell => {
+			cell.addEventListener("mouseover", setCellPaint);
 			cell.addEventListener("mouseover", setRandomCellPaint)	
-		);
+		});
 	}
 
 	function handleEraserSelector() {
+		const cells = document.querySelectorAll(".grid-cell");
+		
 		cells.forEach(cell => {
 			cell.removeEventListener("mouseover", setCellPaint);
 			cell.removeEventListener("mouseover", setRandomCellPaint);
@@ -89,13 +95,12 @@ function setupEventListeners(gridConfig) {
 	eraserSelector.addEventListener("click", handleEraserSelector);
 }
 
-function setGridScale(gridConfig) {
+function setupScaleListener(gridConfig) {
 	const scale = document.querySelector(".scale");
 	scale.addEventListener("change", () => {
 		gridConfig.dimension = scale.value;
 		resetGrid();
 		createGrid(gridConfig);
-		colorGrid(gridConfig);
 	});
 }
 
