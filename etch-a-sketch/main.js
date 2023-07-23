@@ -47,6 +47,7 @@ function setupEventListeners(gridConfig) {
 	const rainbowSelector = document.querySelector(".rainbow-selector");
 	const eraserSelector = document.querySelector(".eraser-selector");
 	const colorDisplay = document.querySelector("#color-display");
+	const eraserDisplay = document.querySelector("#eraser-display");
 
 	function setCellPaint(e) {
 		e.target.style.backgroundColor = gridConfig.color;
@@ -80,12 +81,13 @@ function setupEventListeners(gridConfig) {
 
 	function handleEraserSelector() {
 		const cells = document.querySelectorAll(".grid-cell");
-		
+
+		eraserDisplay.click();
 		cells.forEach(cell => {
 			cell.removeEventListener("mouseover", setCellPaint);
 			cell.removeEventListener("mouseover", setRandomCellPaint);
 			cell.addEventListener("click", () => { 
-				cell.style.backgroundColor = "rgb(255, 255, 255)";
+				cell.style.backgroundColor = eraserDisplay.value;
 			});
 		});
 	}
