@@ -1,10 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<title>Rock Paper Scissors</title>
-		<script src="./rock-paper-scissors.js"></script>
-	</head>
-	<body>
-	</body>
+  <head>
+    <meta charset="utf-8">
+    <title>RPS Arena</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Audiowide&family=Open+Sans:wght@300&family=Orbitron&display=swap">
+    <script src="./rps.js" defer></script>
+  </head>
+  <body>
+    <div class="header">
+      <h1 class="title">rock paper scissors</h1>
+      <button>play</button>
+    </div>
+    <div class="announcement">ready your hand, greet your foe, let the RPS battle unfold!</div>
+    <div class="player">
+      <div class="profile">
+		<div class="name">player</div>
+        <img class="picture" src="./images/person.png">
+      </div>
+      <div class="rps-cards">
+        <div data-key="rock" class="card">
+          rock
+          <img class="weapon" src="./images/rock.png">
+          <div class="description">The solid foundation that <strong>crumbles</strong> opponents into <strong>pebbles</strong>.</div>
+        </div>
+        <div data-key="paper" class="card">
+          paper
+          <img class="weapon" src="./images/paper.png">
+          <div class="description">A <strong>serene</strong> dance of strategy, effortlessly <strong>outwitting</strong> the rest.</div>
+        </div>
+        <div data-key="scissors" class="card">
+          scissors
+          <img class="weapon" src="./images/scissors.png">
+          <div class="description">The <strong>swift</strong> blades that slice through uncertainty, carving a path to <strong>triumph</strong>.</div>
+        </div>
+      </div>
+    </div>
+    <div class="computer">
+      <div class="profile">
+		<div class="name">computer</div>
+        <img class="picture" src="./images/computer.webp">
+      </div>
+      <div class="rps-cards">
+        <div data-key="rock" class="card">
+          rock
+          <img class="weapon" src="./images/rock.png">
+          <div class="description">The solid foundation that <strong>crumbles</strong> opponents into <strong>pebbles</strong>.</div>
+        </div>
+        <div data-key="paper" class="card">
+          paper
+          <img class="weapon" src="./images/paper.png">
+          <div class="description">A <strong>serene</strong> dance of strategy, effortlessly <strong>outwitting</strong> the rest.</div>
+        </div>
+        <div data-key="scissors" class="card">
+          scissors
+          <img class="weapon" src="./images/scissors.png">
+          <div class="description">The <strong>swift</strong> blades that slice through uncertainty, carving a path to <strong>triumph</strong>.</div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
