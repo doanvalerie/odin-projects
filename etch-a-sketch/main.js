@@ -36,7 +36,7 @@ class Grid {
 		}
 
 		this.cellsArray.forEach(cell => {
-			cell.element.removeColorModes();
+			cell.removeColorModes();
 		})
 	}
 }
@@ -71,7 +71,7 @@ class Cell {
 	}
 
 	setSelectCellPaint() {
-		const colorDisplay = document.querySelector("#color-display");
+		const colorDisplay = document.querySelector(".color-input");
 		this.color = hexToRGB(colorDisplay.value);
 		this.element.style.backgroundColor = this.color;
 	}
@@ -85,7 +85,7 @@ class Cell {
 	}
 
 	eraseCellPaint() {
-		const eraserDisplay = document.querySelector("#eraser-display");
+		const eraserDisplay = document.querySelector(".eraser-input");
 		this.color = eraserDisplay.value;
 		this.element.style.backgroundColor = this.color;
 	}
@@ -110,6 +110,11 @@ class Cell {
 		this.color = `rgb(${rgbValues[0]}, ${rgbValues[1]}, ${rgbValues[2]})`;
 		this.element.style.backgroundColor = this.color;
 	}
+
+	resetCellBackground() {
+		this.color = "rgb(255, 255, 255)";
+		this.element.style.backgroundColor = this.color;
+	}
 }
 
 class Editor {
@@ -120,12 +125,13 @@ class Editor {
 		this.enableEraserSelector();
 		this.enableLightShaderSelector();
 		this.enableDarkShaderSelector();
+		this.enableResetSelector();
 		this.enableScaleSelector();
 	}
 
 	enableColorSelector() {
 		const colorSelector = document.querySelector(".color-selector");
-		const colorDisplay = document.querySelector("#color-display");
+		const colorDisplay = document.querySelector(".color-input");
 
 		colorSelector.addEventListener("click", () => {
 			colorDisplay.click();
@@ -149,14 +155,14 @@ class Editor {
 
 	enableEraserSelector() {
 		const eraserSelector = document.querySelector(".eraser-selector");
-		const eraserDisplay = document.querySelector("#eraser-display");
+		const eraserDisplay = document.querySelector(".eraser-input");
 
 		eraserSelector.addEventListener("click", () => {
 			eraserDisplay.click();
 			this.grid.cellsArray.forEach(cell => {
 				cell.removeColorModes();
 				cell.element.addEventListener("click", cell.eraseCellPaint);
-			})
+			});
 		});
 	}
 
@@ -167,7 +173,7 @@ class Editor {
 			this.grid.cellsArray.forEach(cell => {
 				cell.removeColorModes();
 				cell.element.addEventListener("mouseover", cell.setLightShader);
-			})
+			});
 		});
 	}
 
@@ -178,8 +184,18 @@ class Editor {
 			this.grid.cellsArray.forEach(cell => {
 				cell.removeColorModes();
 				cell.element.addEventListener("mouseover", cell.setDarkShader);
-			})
-		})
+			});
+		});
+	}
+
+	enableResetSelector() {
+		const resetSelector = document.querySelector(".reset-selector");
+
+		resetSelector.addEventListener("click", () => {
+			this.grid.cellsArray.forEach(cell =>
+				cell.resetCellBackground()
+			)
+		});
 	}
 	
 	enableScaleSelector() {
@@ -194,17 +210,17 @@ class Editor {
 
 function hexToRGB(hex) {
 	const captures = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-	rgb = {
+	const rgb = {
 	  red: parseInt(captures[1], 16),
 	  green: parseInt(captures[2], 16),
 	  blue: parseInt(captures[3], 16)
-	}
+	};
 	return `rgb(${rgb.red}, ${rgb.green}, ${rgb.blue})`;
 }
-
-setupGame();
 
 function setupGame() {
 	const grid = new Grid(16);
 	const editor = new Editor(grid);
 }
+
+setupGame();
