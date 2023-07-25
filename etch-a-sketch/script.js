@@ -35,9 +35,9 @@ class Grid {
 			grid.removeChild(grid.firstChild);
 		}
 
-		this.cellsArray.forEach(cell => {
-			cell.removeColorModes();
-		})
+		this.cellsArray.forEach(cell => 
+			cell.removeColorModes()
+		);
 	}
 }
 
@@ -169,33 +169,33 @@ class Editor {
 	enableLightShaderSelector() {
 		const lightShaderSelector = document.querySelector(".light-shader-selector");
 
-		lightShaderSelector.addEventListener("click", () => {
+		lightShaderSelector.addEventListener("click", () => 
 			this.grid.cellsArray.forEach(cell => {
 				cell.removeColorModes();
 				cell.element.addEventListener("mouseover", cell.setLightShader);
-			});
-		});
+			})
+		);
 	}
 
 	enableDarkShaderSelector() {
 		const darkShaderSelector = document.querySelector(".dark-shader-selector");
 		
-		darkShaderSelector.addEventListener("click", () => {
+		darkShaderSelector.addEventListener("click", () =>
 			this.grid.cellsArray.forEach(cell => {
 				cell.removeColorModes();
 				cell.element.addEventListener("mouseover", cell.setDarkShader);
-			});
-		});
+			})
+		);
 	}
 
 	enableResetSelector() {
 		const resetSelector = document.querySelector(".reset-selector");
 
-		resetSelector.addEventListener("click", () => {
+		resetSelector.addEventListener("click", () =>
 			this.grid.cellsArray.forEach(cell =>
 				cell.resetCellBackground()
 			)
-		});
+		);
 	}
 	
 	enableScaleSelector() {
@@ -204,7 +204,7 @@ class Editor {
 		scaleSelector.addEventListener("change", () => {
 			this.grid.resetGrid();
 			this.grid = new Grid(scaleSelector.value);
-		})
+		});
 	}
 }
 
