@@ -12,8 +12,8 @@ body {
 }
 
 h1 {
-  font-size: 48px;
   text-align: center;
+  font-size: 48px;
   color: rgb(255, 69, 0);
   margin-bottom: 0;
 }
@@ -68,8 +68,8 @@ input[type="color"] {
 }
 
 button {
-  font-size: 24px;
   text-align: center;
+  font-size: 24px;
   color: rgb(255, 255, 255);
   border-radius: 10px;
   width: 140px;
@@ -101,14 +101,14 @@ button {
   background-color: rgb(199, 21, 133);
 }
 
+.scale {
+  accent-color: rgb(248, 241, 241);
+}
+
 footer {
   font-family: 'Roboto Mono', monospace;
   text-align: center;
-  padding: 16px;
   background-color: rgb(255, 69, 0);
   color: rgb(255, 255, 255);
-}
-
-.scale {
-  accent-color: rgb(248, 241, 241);
+  padding: 16px;
 }
