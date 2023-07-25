@@ -13,9 +13,9 @@ class RockPaperScissors {
 		this.weaponElements = {
 			computer: "",
 			player: ""
-		}
+		};
 
-		this.handleWeaponClick = this.handleWeaponClick.bind(this)
+		this.handleWeaponClick = this.handleWeaponClick.bind(this);
 		this.checkGameOver = this.checkGameOver.bind(this);
 
 		this.playerCards = document.querySelectorAll(".player .card");
@@ -234,7 +234,7 @@ class RockPaperScissors {
 		results.forEach(score => 
 			score.removeEventListener("DOMSubtreeModified", this.checkGameOverCallback)
 		);
-		
+
 		this.playerCards.forEach(card => 
 			card.removeEventListener("click", this.handleWeaponClickCallback)
 		);
