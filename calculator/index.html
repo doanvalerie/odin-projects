@@ -6,17 +6,22 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300&family=Poppins:wght@200;300;400&family=Quicksand:wght@300;400&family=Roboto+Mono&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap">
+  <script src="./script.js" defer></script>
 </head>
 <body>
-  <header>calculator</header>
+  <!-- <header>calculator</header> -->
   <main>
     <div class="calculator">
-      <div class="display"></div>
+      <div class="display">
+		<div class="history"></div>
+		<div class="input"></div>
+	  </div>
       <div class="button-row">
         <button class="clear">AC</button>
-        <button class="clear"><</button>
+        <button class="delete"><</button>
         <button class="operator">%</button>
-        <button class="operator">+</button>
+        <button data-key="add" class="operator">+</button>
       </div>
       <div class="button-row">
         <button class="number">7</button>
@@ -37,10 +42,11 @@
         <button class="operator">/</button>
       </div>
       <div class="button-row">
-        <button class="number">0</button>
-        <button class="decimal">.</button>
-        <button class="operator">x<sup>y</sup></button>
-        <button class="operator">=</button>
+		<div class="left-elements">
+			<button class="number">0</button>
+			<button class="decimal">.</button>
+		</div>
+        <button class="equal">=</button>
       </div>
     </div>
   </main>
