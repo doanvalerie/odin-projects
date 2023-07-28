@@ -6,7 +6,7 @@ function setup() {
 		operand2: null,
 		result: null,
 		operator: null,
-		equalsLastClicked: false,
+		equalLastClicked: false,
 		operatorLastClicked: false,
 		isInputOld: true,
 	}
@@ -40,12 +40,17 @@ function setupEventListeners(calcInfo) {
 
 	const equalButton = document.querySelector("button.equal");
 	equalButton.addEventListener("click", () => evalute(calcInfo));
+
+	const signButton = document.querySelector("button.sign");
+	signButton.addEventListener("click", () => processSign(calcInfo));
+
+	window.addEventListener("keydown", processKeyboardInput);
 }
 
 function checkDisplayReset(calcInfo) {
-	if (calcInfo.equalsLastClicked) {
+	if (calcInfo.equalLastClicked) {
 		clearDisplay(calcInfo);
-		calcInfo.equalsLastClicked = false;
+		calcInfo.equalLastClicked = false;
 	}
 }
 
@@ -57,7 +62,7 @@ function checkInputReset(calcInfo) {
 }
 
 function clearDisplay(calcInfo) {
-	const input = document.querySelector("div.input");
+	const input = document.querySelector(".input");
 	const history = document.querySelector(".history");
 
 	input.textContent = "";
@@ -67,12 +72,17 @@ function clearDisplay(calcInfo) {
 }
 
 function clearInput() {
-	const input = document.querySelector("div.input");
+	const input = document.querySelector(".input");
 	input.textContent = "";
 }
 
 function displayNumber(e, calcInfo) {
 	const input = document.querySelector("div.input");
+
+	if (input.textContent.length + 1 > 10) {
+		return;
+	}
+
 	input.textContent += e.target.textContent;
 	calcInfo.isInputOld = false;
 }
@@ -82,13 +92,13 @@ function resetCalcInfo(calcInfo) {
 	calcInfo.operand2 = null;
 	calcInfo.result = null;
 	calcInfo.operator = null;
-	calcInfo.equalsLastClicked = false;
+	calcInfo.equalLastClicked = false;
 	calcInfo.operatorLastClicked = false;
 	calcInfo.isInputOld = true;
 }
 
 function deleteEntry(calcInfo) {
-	const input = document.querySelector("div.input");
+	const input = document.querySelector(".input");
 	const inputValue = input.textContent;
 	input.textContent = inputValue.substring(0, inputValue.length - 1);
 
@@ -98,7 +108,8 @@ function deleteEntry(calcInfo) {
 }
 
 function inputDecimal() {
-	const input = document.querySelector("div.input");
+	const input = document.querySelector(".input");
+
 	if (input.textContent.includes(".")) {
 		return;
 	}
@@ -117,7 +128,8 @@ function processOperator(e, calcInfo) {
 		calcInfo.operand1 = calcInfo.operand2;
 		calcInfo.operand2 = +input.textContent;
 
-		const operationDefined = calcInfo.operand1 && calcInfo.operand2;
+		const operationDefined = calcInfo.operand1 != null && calcInfo.operand2 != null;
+
 		if (operationDefined) {
 			performOperation(calcInfo);
 			displayResult(calcInfo);
@@ -125,7 +137,7 @@ function processOperator(e, calcInfo) {
 		}
 	}
 
-	calcInfo.equalsLastClicked = false;
+	calcInfo.equalLastClicked = false;
 	calcInfo.operatorLastClicked = true;
 	calcInfo.isInputOld = true;
 	calcInfo.operator = e.target.textContent;
@@ -133,14 +145,14 @@ function processOperator(e, calcInfo) {
 }
 
 function evalute(calcInfo) {
-	if (calcInfo.equalsLastClicked || calcInfo.isInputOld) {
+	if (calcInfo.equalLastClicked || calcInfo.isInputOld) {
 		return;
 	}
 
-	if (calcInfo.operand2) {
+	if (calcInfo.operand2 != null) {
 		const display = document.querySelector("div.input");
 
-		calcInfo.equalsLastClicked = true;
+		calcInfo.equalLastClicked = true;
 		calcInfo.operand1 = calcInfo.operand2;
 		calcInfo.operand2 = +display.textContent;
 
@@ -150,6 +162,24 @@ function evalute(calcInfo) {
 
 		calcInfo.operand2 = calcInfo.result;
 		calcInfo.isInputOld = true;
+	}
+}
+
+function processSign(calcInfo) {
+	const input = document.querySelector("div.input");
+	if (!input.textContent) {
+		return;
+	}
+
+	inputValue = +input.textContent;
+	if (inputValue < 0) {
+		input.textContent = input.textContent.replace("-", "");
+	}
+	if (inputValue > 0) {
+		input.textContent = "-" + input.textContent;
+	}
+	if (calcInfo.isInputOld) {
+		calcInfo.operand2 = +input.textContent;
 	}
 }
 
@@ -171,30 +201,55 @@ function performOperation(calcInfo) {
 			calcInfo.result = calcInfo.operand1 % calcInfo.operand2;
 			break;
 	}
-
-	// processDecimalValue(calcInfo);
 }
-
-// function processDecimalValue(calcInfo) {
-// 	const resultString = calcInfo.result.toString();
-// 	const decimalIndex = resultString.indexOf(".");
-// 	const decimalString = resultString.substring(decimalIndex + 1);
-// 	if (resultString.length > 9) {
-// 		calcInfo.result = +calcInfo.result.toFixed(5);
-// 	}
-// }
 
 function displayResult(calcInfo) {
 	const display = document.querySelector("div.input");
-	display.textContent = calcInfo.result;
+	resultString = calcInfo.result.toString();
+
+	if (calcInfo.result.toString().length > 10) {
+		display.textContent = calcInfo.result.toExponential(6);
+	} 
+	else {
+		display.textContent = calcInfo.result;
+	}
 }
 
 function updateHistory(calcInfo) {
 	const history = document.querySelector(".history");
-	if (calcInfo.equalsLastClicked) {
-		history.textContent = `${calcInfo.operand1} ${calcInfo.operator} ${calcInfo.operand2} = ${calcInfo.result}`;
-	}
+	const operand1 = processDecimalLength(calcInfo.operand1);
+	const operand2 = processDecimalLength(calcInfo.operand2);
+	const result = processDecimalLength(calcInfo.result);
+
+	if (calcInfo.equalLastClicked) {
+		history.textContent = `${operand1} ${calcInfo.operator} ${operand2} = ${result}`;
+	} 
 	else {
-		history.textContent = `${calcInfo.operand2} ${calcInfo.operator} `;
+		history.textContent = `${operand2} ${calcInfo.operator} `;
+	}
+}
+
+function processDecimalLength(number) {
+	if (number == undefined) {
+		return;
+	}
+	if (number.toString().length > 10) {
+		return number.toExponential(6);
+	}
+	return number.toString();
+}
+
+function processKeyboardInput(e) {
+	const button = document.querySelector(`[data-key="${e.key}"`);
+	if (button != undefined) {
+		button.click();
+	} 
+	else if (e.code === "Enter") {
+		const equalButton = document.querySelector(`[data-key="="]`);
+		equalButton.click();
+	}
+	else if (e.code === "Backspace") {
+		const deleteButton = document.querySelector(".delete");
+		deleteButton.click();
 	}
 }

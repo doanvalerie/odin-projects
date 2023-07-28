@@ -35,18 +35,18 @@ main {
   background-color: rgb(244, 177, 188);
   border-radius: 16px;
   box-shadow: -4px -4px 16px rgb(167, 179, 210);
-  width: 420px;
-  height: 580px;
+  width: 480px;
+  height: 590px;
   padding: 10px;
 }
 
 .display {
-  font-family: 'Orbitron', sans-serif;
   display: flex;
   flex-direction: column;
   justify-content: end;
   flex: 1;
   text-align: right;
+  font-family: 'Orbitron', sans-serif;
   background-color: rgb(249, 245, 247);
   color: rgb(66, 63, 63);
   border-radius: 16px;
@@ -61,8 +61,6 @@ main {
 }
 
 .history {
-  white-space: nowrap;
-  overflow: hidden;
   font-size: 16px;
 }
 
@@ -74,45 +72,46 @@ main {
   gap: 20px;
 }
 
-.left-elements {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  flex: 0;
-}
-
 button {
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: 'Quicksand', sans-serif;
   font-size: 24px;
-  background-color: rgb(246, 233, 245);
-  border: none;
-  box-shadow: -3px -3px 8px rgb(219, 155, 167);
   color: rgb(72, 69, 69);
+  box-shadow: -3px -3px 8px rgb(219, 155, 167);
   border-radius: 20px;
+  border: none;
   width: 88px;
   height: 64px;
 }
 
+.number,
+.decimal {
+  background-color: rgb(246, 233, 245);
+}
+
+.function-keys {
+  background-color: rgb(250, 228, 213);
+}
+
 button:hover {
   transform: translateY(-2px);
+}
+
+.number:hover,
+.decimal:hover {
   background-color: rgb(250, 203, 211);
 }
 
-.equal {
-  flex: 1;
+.function-keys:hover {
+  background-color: rgb(252, 198, 162);
 }
 
 footer {
   text-align: center;
   font-family: 'Roboto Mono', monospace;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   color: rgb(72, 69, 69);
   padding: 16px;
-}
-
-sup {
-  font-size: 12px;
 }
