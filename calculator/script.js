@@ -31,7 +31,7 @@ function setupEventListeners(calcInfo) {
 	deleteButton.addEventListener("click", () => deleteEntry(calcInfo));
 
 	const decimalButton = document.querySelector("button.decimal");
-	decimalButton.addEventListener("click", inputDecimal);
+	decimalButton.addEventListener("click", () => inputDecimal(calcInfo));
 
 	let operationButtons = document.querySelectorAll("button.operator");
 	operationButtons.forEach(operationButton => 
@@ -98,6 +98,10 @@ function resetCalcInfo(calcInfo) {
 }
 
 function deleteEntry(calcInfo) {
+	if (calcInfo.result === "undefined behavior") {
+		return;
+	}
+
 	const input = document.querySelector(".input");
 	const inputValue = input.textContent;
 	input.textContent = inputValue.substring(0, inputValue.length - 1);
@@ -107,20 +111,18 @@ function deleteEntry(calcInfo) {
 	}
 }
 
-function inputDecimal() {
+function inputDecimal(calcInfo) {
 	const input = document.querySelector(".input");
-
-	if (input.textContent.includes(".")) {
+	if (calcInfo.result === "undefined behavior" || input.textContent.includes(".")) {
 		return;
 	}
-
 	input.textContent += ".";
 }
 
 function processOperator(e, calcInfo) {
 	const input = document.querySelector("div.input");
 	
-	if (!input.textContent) {
+	if (!input.textContent || calcInfo.result === "undefined behavior") {
 		return;
 	}
 
@@ -129,10 +131,12 @@ function processOperator(e, calcInfo) {
 		calcInfo.operand2 = +input.textContent;
 
 		const operationDefined = calcInfo.operand1 != null && calcInfo.operand2 != null;
-
 		if (operationDefined) {
 			performOperation(calcInfo);
 			displayResult(calcInfo);
+			if (calcInfo.result === "undefined behavior") {
+				return;
+			}
 			calcInfo.operand2 = calcInfo.result;
 		}
 	}
@@ -170,7 +174,7 @@ function processSign(calcInfo) {
 	if (!input.textContent) {
 		return;
 	}
-
+	
 	inputValue = +input.textContent;
 	if (inputValue < 0) {
 		input.textContent = input.textContent.replace("-", "");
@@ -196,6 +200,9 @@ function performOperation(calcInfo) {
 			break;
 		case "/":
 			calcInfo.result = calcInfo.operand1 / calcInfo.operand2;
+			if (calcInfo.operand2 === 0) {
+				calcInfo.result = "undefined behavior";
+			}
 			break;
 		case "%":
 			calcInfo.result = calcInfo.operand1 % calcInfo.operand2;
@@ -207,7 +214,7 @@ function displayResult(calcInfo) {
 	const display = document.querySelector("div.input");
 	resultString = calcInfo.result.toString();
 
-	if (calcInfo.result.toString().length > 10) {
+	if (isFinite(calcInfo.result) && calcInfo.result.toString().length > 10) {
 		display.textContent = calcInfo.result.toExponential(6);
 	} 
 	else {
@@ -230,7 +237,7 @@ function updateHistory(calcInfo) {
 }
 
 function processDecimalLength(number) {
-	if (number == undefined) {
+	if (number == undefined || !isFinite(number)) {
 		return;
 	}
 	if (number.toString().length > 10) {
