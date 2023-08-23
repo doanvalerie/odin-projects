@@ -1,51 +1,74 @@
 <!DOCTYPE html>
 <head lang="en">
   <meta charset="utf-8">
-  <title>Sign Up</title>
+  <title>Get Started</title>
+  <script src="./script.js" defer></script>
   <link rel="stylesheet" href="./style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:wght@300&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com"> 
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500&family=Montserrat:wght@400;500;700&family=Open+Sans&family=Roboto:wght@300&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 <body>
   <main>
     <div class="image-sidebar">
-      <img src="./computer.png">
+      <img class="cloud" src="./cloud.png">
+      <h1 class="brand">Aurelia</h1>
     </div>
     <div class="form-sidebar">
-      <h2>
-        This is not a real online service! You know you need something like this in your life to help you realize your deepest dreams. Sign up <em>now</em> to get started.
-      </h2>
-      <form>
-        <div class="left-form-input">
-          <div>
-            <label for="first-name">First Name</label>
-            <input type="text" id="first-name">
+      <form id="registration">
+        <div class="form-heading">
+          <img src="./computer.png">
+          <h2>Embark on your new adventure.<br>You <em>know</em> you want to.</br></h2>
+        </div>
+        <div class="input-fields-row">
+          <div class="input-field">
+            <span class="material-icons">person</span>
+            <input type="text" id="first-name" placeholder="First Name">
           </div>
-          <div>
-            <label for="email">Email</label>
-            <input type="text" id="email">
-          </div>
-          <div>
-            <label for="password">Password</label>
-            <input type="text" id="password">
+          <div class="input-field">
+            <span class="material-icons">person</span>
+            <input type="text" id="last-name" placeholder="Last Name">
           </div>
         </div>
-        <div class="right-form-input">
-          <div>
-            <label for="last-name">Last Name</label>
-            <input type="text" id="last-name">
+        <div class="input-fields-row">
+          <div class="input-field">
+            <span class="material-icons">mail</span>
+            <input type="email" id="email" placeholder="Email">
           </div>
-          <div>
-            <label for="phone-number">Phone Number</label>
-            <input type="text" id="phone-number">
+          <div class="input-field">
+            <span class="material-icons">call</span>
+            <input type="text" id="phone-number" placeholder="Phone Number">
           </div>
-          <div>
-            <label for="confirm-password">Confirm Password</label>
-            <input type="text" id="confirm-password">
+        </div>
+        <div class="input-fields-row">
+          <div class="input-field">
+            <span class="material-icons">lock</span>
+            <input type="password" id="password" placeholder="Password">
+          </div>
+          <div class="input-field">
+            <span class="material-icons">lock</span>
+            <input type="password" id="confirm-password" placeholder="Confirm Password">
+          </div>
+        </div>
+        <div class="agreement">	
+          <div class="input-field">
+            <input type="checkbox" id="mailing-list">
+            <label for="mailing-list">Join Aurelia's mailing list to keep up with the latest mobile news, innovation, and technology.</label>
+          </div>
+          <div class="input-field">
+            <input type="checkbox" id="mailing-list">
+            <label for="mailing-list">I have read and agreed with the <span class="terms">Terms and Conditions</span> and acknowledged the <span class="terms">Global Privacy Statement</span>.</label>
           </div>
         </div>
       </form>
+      <div class="action">
+        <button type="submit" form="registration">Continue</button>
+        <div class="login">
+          <h3>Already have an account?</h3>
+          <button>Log In</button>
+        </div>
+      </div>
     </div>
-  </main>
+  </main>		
 </body>
