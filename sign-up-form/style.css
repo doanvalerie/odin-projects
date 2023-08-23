@@ -19,7 +19,7 @@ div.image-sidebar {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url(./city-line.png);
+  background-image: url(./images/city-line.png);
   background-size: cover;
   background-color: rgb(133, 89, 139);
   width: 40%;
@@ -51,7 +51,6 @@ div.form-sidebar {
   justify-content: center;
   align-items: center;
   flex: 1 0 auto;
-  padding: 40px;
   background-color: rgb(249, 244, 245);
 }
 
@@ -121,7 +120,7 @@ input[type=checkbox] {
   width: fit-content;
 }
 
-div.agreement .input-field + .input-field {
+div.agreements .input-field + .input-field {
   padding-top: 0;
 }
 
@@ -131,7 +130,7 @@ label[for=mailing-list] {
   font-weight: lighter;
 }
 
-span.terms {
+span.link {
   font-weight: 400;
   color: rgb(232, 152, 92);
   cursor: pointer;
