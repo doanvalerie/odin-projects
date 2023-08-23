@@ -124,7 +124,8 @@ div.agreements .input-field + .input-field {
   padding-top: 0;
 }
 
-label[for=mailing-list] {
+label[for=mailing-list],
+label[for=terms-conditions] {
   font-family: 'Roboto', sans-serif;
   font-size: 0.8rem;
   font-weight: lighter;
