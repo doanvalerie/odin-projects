@@ -1,3 +1,23 @@
+:root {
+	--image-sidebar-bg-color: rgb(133, 89, 139);
+	--aurelia-color: rgb(185, 123, 165);
+	--aurelia-shadow: rgb(226, 212, 224);
+
+	--form-sidebar-bg-color: rgb(249, 244, 245);
+	--form-bg-color: rgb(211, 219, 250);
+	--form-shadow: rgb(165, 157, 169);
+
+	--input-field-grey: rgb(128, 128, 128);
+
+	--button-shadow: rgb(128, 123, 116);
+	--continue-color: rgb(211, 219, 250);
+	--continue-hover-color: rgb(189, 199, 239);
+	--login-color: rgb(242, 172, 117);
+	--login-hover-color: rgb(243, 159, 95);
+
+	--link-color: rgb(232, 152, 92);
+}
+
 * {
   box-sizing: border-box;
   font-family: 'Josefin Sans', sans-serif;
@@ -21,7 +41,7 @@ div.image-sidebar {
   align-items: center;
   background-image: url(./images/city-line.png);
   background-size: cover;
-  background-color: rgb(133, 89, 139);
+  background-color: var(--image-sidebar-bg-color);
   width: 40%;
   padding: 100px;
   position: relative;
@@ -40,8 +60,8 @@ div.image-sidebar img {
 
 h1.brand {
   font-size: 3rem;
-  text-shadow: 1px 1px 2px rgb(226, 212, 224);
-  color: rgb(185, 123, 165);
+  text-shadow: 1px 1px 2px var(--aurelia-shadow);
+  color: var(--aurelia-color);
   position: absolute;
 }
 
@@ -51,7 +71,7 @@ div.form-sidebar {
   justify-content: center;
   align-items: center;
   flex: 1 0 auto;
-  background-color: rgb(249, 244, 245);
+  background-color: var(--form-sidebar-bg-color);
   padding: 40px;
 }
 
@@ -60,8 +80,8 @@ form#registration {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgb(211, 219, 250);
-  box-shadow: 4px 4px 8px rgb(165, 157, 169);
+  background-color: var(--form-bg-color);
+  box-shadow: 4px 4px 8px var(--form-shadow);
   width: 90%;
   padding: 40px 40px 10px;
 }
@@ -101,14 +121,14 @@ div.input-field {
 }
 
 span.material-icons {
-  color: rgb(128, 128, 128);
+  color: var(--input-field-grey);
 }
 
 input {
   font-size: 1rem;
   background-color: transparent;
   border: none;
-  border-bottom: 1px solid rgb(82, 78, 78);
+  border-bottom: 1px solid var(--input-field-grey);
   width: 15rem;
 }
 
@@ -117,7 +137,7 @@ input {
 }
 
 .touched:invalid {
-  border-bottom: 1px solid rgb(255, 0, 0);
+  border-bottom: 1px solid red;
 }
 
 div.text-validation {
@@ -130,7 +150,7 @@ div.text-validation {
 div.error {
   font-family: 'Roboto', sans-serif;
   font-size: 10px;
-  color: rgb(255, 0, 0);
+  color: red;
 }
 
 div.agreements {
@@ -143,6 +163,7 @@ div.agreements {
 div.check {
   display: flex;
   align-items: center;
+  gap: 8px;
 }
 
 input[type=checkbox] {
@@ -159,7 +180,7 @@ label[for=terms-conditions] {
 
 span.link {
   font-weight: 400;
-  color: rgb(232, 152, 92);
+  color: var(--link-color);
   cursor: pointer;
 }
 
@@ -168,27 +189,27 @@ button {
   border: none;
   border-radius: 10px;
   padding: 16px 24px;
-  box-shadow: 1px 1px 4px rgb(128, 123, 116);
+  box-shadow: 1px 1px 4px var(--button-shadow);
   cursor: pointer;
 }
 
 button[type=submit] {
-  background-color: rgb(211, 219, 250);
+  background-color: var(--continue-color);
   width: 100%;
   margin: 40px 40px 10px;
 }
 
 button[type=submit]:hover {
-  background-color: rgb(189, 199, 239);
+  background-color: var(--continue-hover-color);
 }
 
 div.login button {
-  background-color: rgb(242, 172, 117);
+  background-color: var(--login-color);
   margin-left: 10px;
 }
 
 div.login button:hover {
-  background-color: rgb(243, 159, 95);
+  background-color: var(--login-hover-color);
 }
 
 div.action {
