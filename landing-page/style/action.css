@@ -1,6 +1,7 @@
 .action-container {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   gap: 24px;
   border-radius: 10px;
   height: fit-content;
@@ -8,6 +9,7 @@
   padding: 52px 64px;
   box-shadow: 2px 2px 8px rgb(47, 47, 47);
   background-color: rgb(253, 213, 91);
+  overflow: auto;
 }
 
 .action-container .main-text {
