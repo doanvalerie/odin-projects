@@ -1,7 +1,5 @@
 const form = document.querySelector("form");
 const inputDivs = document.querySelectorAll("div.input-field");
-const password = document.querySelector("input#password");
-const confirmPassword = document.querySelector("input#confirm-password");
 
 form.addEventListener("submit", (e) => {
 	inputDivs.forEach((inputDiv) => {
@@ -24,7 +22,6 @@ inputDivs.forEach((inputDiv) => {
 	field.addEventListener("input", (e) => {
 		if (field.validity.valid) {
 			fieldError.textContent = "";
-			fieldError.className = "error";
 		}
 		else {
 			showError(e.target);
@@ -39,7 +36,7 @@ function showError(field) {
 		fieldError.textContent = "This field cannot be empty.";
 	}
 	else if (field.validity.tooShort) {
-		fieldError.textContent = `This field must be at least ${field.minLength} characters.`
+		fieldError.textContent = `This field must contain at least ${field.minLength} characters.`;
 	}
 	else if (field.validity.patternMismatch) {
 		if (field.pattern === "^[A-Za-z ]*[A-Za-z][A-Za-z ]*$") {
@@ -54,13 +51,14 @@ function showError(field) {
 	}
 }
 
-
+const password = document.querySelector("input#password");
+const confirmPassword = document.querySelector("input#confirm-password");
 password.addEventListener("input", comparePasswords);
 confirmPassword.addEventListener("input", comparePasswords);
 
 function comparePasswords() {
 	if (password.value !== confirmPassword.value && confirmPassword.classList.contains("touched")) {
-		confirmPassword.nextElementSibling.textContent = "Passwords do not match";
+		confirmPassword.nextElementSibling.textContent = "Passwords do not match.";
 		confirmPassword.setCustomValidity("Passwords do not match.");
 	}
 	else {
