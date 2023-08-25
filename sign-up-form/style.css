@@ -116,13 +116,38 @@ input {
   transform: scale(1.1);
 }
 
+.touched:invalid {
+  border-bottom: 1px solid rgb(255, 0, 0);
+}
+
+div.text-validation {
+  display: flex;
+  flex-direction: column;
+  height: 26px;
+  gap: 4px;
+}
+
+div.error {
+  font-family: 'Roboto', sans-serif;
+  font-size: 10px;
+  color: rgb(255, 0, 0);
+}
+
+div.agreements {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  gap: 4px;
+}
+
+div.check {
+  display: flex;
+  align-items: center;
+}
+
 input[type=checkbox] {
   flex-shrink: 0;
   width: fit-content;
-}
-
-div.agreements .input-field + .input-field {
-  padding-top: 0;
 }
 
 label[for=mailing-list],
@@ -144,6 +169,7 @@ button {
   border-radius: 10px;
   padding: 16px 24px;
   box-shadow: 1px 1px 4px rgb(128, 123, 116);
+  cursor: pointer;
 }
 
 button[type=submit] {
