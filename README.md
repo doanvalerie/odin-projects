@@ -9,6 +9,13 @@
 | Etch-A-Sketch       | JavaScript Basics | [Etch-A-Sketch](https://doanvalerie.github.io/odin-projects/etch-a-sketch)             |
 | Calculator          | JavaScript Basics | [Calculator](https://doanvalerie.github.io/odin-projects/calculator)                   |
 
+### Full Stack JavaScript Course
+| Project             | Topic             | Link                                                                                   |
+| ------------------- | ----------------- | -------------------------------------------------------------------------------------- |
+| Sign Up Form        | Forms             | [Sign Up Form](https://doanvalerie.github.io/odin-projects/sign-up-form)               |
+ 
+If any bugs are encountered, feel free to reach out! 
+
 ## Foundations Course
 ### Landing Page
 
@@ -153,6 +160,49 @@ refactoring the code after learning important JavaScript concepts.
           <ul>
             <li>JavaScript fundamentals</li>
             <li>DOM manipulation and events</li>
+          </ul>
+        </li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+## Full Stack JavaScript Course
+### Sign Up Form
+
+<table>
+  <tr>
+    <th>Link</th>
+    <th>Skills</th>
+  </tr>
+  <tr>
+    <td>
+      <a href="https://doanvalerie.github.io/odin-projects/sign-up-form">Sign Up Form</a>
+    </td>
+    <td>
+      <ul>
+        <li>HTML
+          <ul>
+            <li>Flexbox layouts</li>
+			<li>Forms</li>
+          </ul>
+        </li>
+        <li>CSS
+          <ul>
+            <li>CSS selectors</li>
+            <li>The cascade of CSS</li>
+			<li>CSS variables</li>
+          </ul>
+        </li>
+        <li>JavaScript
+          <ul>
+            <li>DOM manipulation and events</li>
+			<li>Form validation</li>
+          </ul>
+        </li>
+		<li>Extra
+          <ul>
+            <li>Regular Expressions</li>
           </ul>
         </li>
       </ul>
