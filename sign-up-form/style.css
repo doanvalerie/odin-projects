@@ -160,7 +160,7 @@ div.agreements {
   gap: 4px;
 }
 
-div.check {
+div.checkbox-input-field {
   display: flex;
   align-items: center;
   gap: 8px;
