@@ -1,7 +1,7 @@
 const form = document.querySelector("form");
 const inputDivs = document.querySelectorAll("div.input-field");
 const policyInput = document.querySelector("input#terms-conditions");
-const policyInputError = policyInput.querySelector("input#terms-conditions + div.text-content > div.error");
+const policyInputError = document.querySelector("input#terms-conditions + div.text-content > div.error");
 const password = document.querySelector("input#password");
 const confirmPassword = document.querySelector("input#confirm-password");
 
