@@ -10,6 +10,7 @@
 | Calculator          | JavaScript Basics | [Calculator](https://doanvalerie.github.io/odin-projects/calculator)                   |
 
 ### Full Stack JavaScript Course
+
 | Project             | Topic             | Link                                                                                   |
 | ------------------- | ----------------- | -------------------------------------------------------------------------------------- |
 | Sign Up Form        | Forms             | [Sign Up Form](https://doanvalerie.github.io/odin-projects/sign-up-form)               |
@@ -241,3 +242,7 @@ refactoring the code after learning important JavaScript concepts.
     </td>
   </tr>
 </table>
+
+In this project, I began playing slightly around with media queries. At this moment, I have 
+not extensively studied responsive website design. After learning proper practices, I hope to
+return to this project and prior designs to make them responsive. 
