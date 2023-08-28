@@ -103,12 +103,12 @@ body {
   gap: 2px;
 }
 
-.header > .greeting > .text > .welcome {
+.header > .greeting .welcome {
   font-size: 1.3rem;
   font-weight: 500;
 }
 
-.header > .greeting > .text > .username {
+.header > .greeting .username {
   font-size: 1.6rem;
   font-weight: 600;
 }
@@ -117,15 +117,14 @@ body {
 
 .header > .actions {
   gap: 16px;
-  justify-self: end;
-  align-self: center;
+  place-self: center;
 }
 
 .header > .actions > button {
   font-size: 1rem;
   font-weight: 500;
-  background-color: var(--primary-color);
-  border: none;
+  background-color: white;
+  border: 2px solid var(--primary-color);
   border-radius: 20px;
   box-shadow: 1px 1px 4px var(--light-grey-shadow);
   padding: 12px 20px;
@@ -133,7 +132,7 @@ body {
   cursor: pointer;
 }
 
-.header > .actions button:hover {
+.header > .actions > button:hover {
   background-color: var(--primary-color-darker);
 }
 
@@ -186,7 +185,6 @@ body {
 
 .main-content {
   display: grid;
-  grid-template-rows: 1fr 1fr;
   grid-template-columns: 2fr 1fr;
   grid-area: 2 / 2 / 3 / 3;
   padding: 20px;
@@ -206,7 +204,7 @@ a {
 /* Main Content: My Web Development Journey */
 
 .main-content > .web-journey {
-  grid-area: 1 / 1 / 3 / 2;
+  grid-area: 1 / 1 / 2 / 2;
   padding: 20px;
 }
 
@@ -258,62 +256,64 @@ a {
 
 /* Main Content: About Me */
 
-.main-content > .about-me {
+.main-content > .user-info > .about-me {
+  grid-area: 1 / 2 / 2 / 3;
   padding: 20px;
 }
 
-.main-content > .about-me > .content {
+.main-content > .user-info > .about-me > .content {
   background-color: var(--light-grey);
   box-shadow: 2px 2px 4px var(--light-grey-shadow);
   border-radius: 8px;
   padding: 20px;
 }
 
-.main-content > .about-me > .content > .divider {
+.main-content > .user-info > .about-me > .content > .divider {
   background-color: var(--divider-color);
   margin: 10px 0;
   height: 1px;
 }
 
-.main-content > .about-me > .content > .entry > .title {
+.main-content > .user-info > .about-me > .content > .entry > .title {
   font-size: 0.9rem;
   font-weight: 600;
   padding-bottom: 4px;
 }
 
-.main-content > .about-me > .content > .entry > .caption {
+.main-content > .user-info > .about-me > .content > .entry > .caption {
   font-size: 0.8rem;
 }
 
 /* Main Content: Socials */
-.main-content > .socials {
+.main-content > .user-info > .socials {
+  grid-area: 1 / 2 / 2 / 3;
   padding: 20px;
 }
 
-.main-content > .socials > .content {
+.main-content > .user-info > .socials > .content {
   background-color: var(--light-grey);
   box-shadow: 1px 1px 4px var(--light-grey-shadow);
   border-radius: 8px;
   padding: 20px;
 }
 
-.main-content > .socials > .content > .account {
+.main-content > .user-info > .socials > .content > .account {
   display: flex;
   gap: 12px;
   padding: 6px;
 }
 
-.main-content > .socials > .content > .account > .info {
+.main-content > .user-info > .socials > .content > .account > .info {
   display: flex;
   flex-direction: column;
   gap: 2px;
 }
 
-.main-content > .socials > .content > .account > .info > .username {
+.main-content > .user-info > .socials > .content > .account > .info > .username {
   font-weight: 500;
 }
 
-.main-content > .socials > .content > .account > .info > .media {
+.main-content > .user-info > .socials > .content > .account > .info > .media {
   font-size: 0.9rem;
   font-weight: 400;
 }
@@ -343,8 +343,8 @@ a {
   }
 
   .sidebar,
-  div.main-content > .about-me, 
-  div.main-content > .socials,
+  div.main-content .about-me, 
+  div.main-content .socials,
   .header > .icons, 
   .header > .actions {
     display: none;
