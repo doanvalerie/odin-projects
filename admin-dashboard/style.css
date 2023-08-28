@@ -10,8 +10,11 @@
 
 :root {
   --primary-color: rgb(250, 178, 123);
+  --primary-color-darker: rgb(248, 170, 110);
   --light-grey: rgb(245, 245, 245);
   --light-grey-shadow: rgb(220, 220, 220);
+  --menu-color: rgb(90, 90, 90);
+  --divider-color: rgb(151, 149, 149);
 }
 
 body {
@@ -131,7 +134,7 @@ body {
 }
 
 .header > .actions button:hover {
-  background-color: rgb(248, 170, 110);
+  background-color: var(--primary-color-darker);
 }
 
 /* Section: Sidebar */
@@ -151,9 +154,13 @@ body {
   font-weight: 600;
 }
 
+.sidebar > .brand > span {
+  color: var(--primary-color-darker);
+}
+
 .sidebar > .menu {
   align-self: center;
-  color: rgb(90, 90, 90);
+  color: var(--menu-color);
   border-radius: 20px;
   padding: 20px;
 }
@@ -212,7 +219,7 @@ a {
 .main-content > .web-journey > .portfolio > .card {
   display: grid;
   grid-template-columns: 8px 1fr;
-  font-family: Nunito-Sans;
+  font-family: Nunito-Sans, sans-serif;
   border-radius: 8px;
   box-shadow: 1px 1px 4px var(--light-grey-shadow);
   background-color: var(--light-grey);
@@ -263,7 +270,7 @@ a {
 }
 
 .main-content > .about-me > .content > .divider {
-  background-color: rgb(151, 149, 149);
+  background-color: var(--divider-color);
   margin: 10px 0;
   height: 1px;
 }
