@@ -317,3 +317,36 @@ a {
   font-size: 0.9rem;
   font-weight: 400;
 }
+
+/* Media Queries */
+
+@media (max-width: 768px) {
+  body {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 4fr; 
+  }
+
+  .header {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  div.main-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+
+  div.main-content > .web-journey {
+    grid-area: 1 / 1 / 2 / 2;
+  }
+
+  .sidebar,
+  div.main-content > .about-me, 
+  div.main-content > .socials,
+  .header > .icons, 
+  .header > .actions {
+    display: none;
+  }
+}
