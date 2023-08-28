@@ -13,6 +13,7 @@
 | Project             | Topic             | Link                                                                                   |
 | ------------------- | ----------------- | -------------------------------------------------------------------------------------- |
 | Sign Up Form        | Forms             | [Sign Up Form](https://doanvalerie.github.io/odin-projects/sign-up-form)               |
+| Admin Dashboard     | Grid              | [Admin Dashboard](https://doanvalerie.github.io/odin-projects/admin-dashboard)         |
  
 If any bugs are encountered, feel free to reach out! 
 
@@ -203,6 +204,37 @@ refactoring the code after learning important JavaScript concepts.
 		<li>Extra
           <ul>
             <li>Regular Expressions</li>
+          </ul>
+        </li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+### Admin Dashboard
+
+<table>
+  <tr>
+    <th>Link</th>
+    <th>Skills</th>
+  </tr>
+  <tr>
+    <td>
+      <a href="https://doanvalerie.github.io/odin-projects/admin-dashboard">Admin Dashboard</a>
+    </td>
+    <td>
+      <ul>
+        <li>HTML
+          <ul>
+            <li>Grid layouts</li>
+			<li>Flexbox layouts</li>
+          </ul>
+        </li>
+        <li>CSS
+          <ul>
+            <li>CSS selectors</li>
+            <li>The cascade of CSS</li>
+			<li>CSS variables</li>
           </ul>
         </li>
       </ul>
