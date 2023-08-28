@@ -1,0 +1,312 @@
+@font-face {
+  font-family: Montserrat;
+  src: url(./fonts/Montserrat-VariableFont_wght.ttf);
+}
+
+@font-face {
+  font-family: Nunito-Sans;
+  src: url(./fonts/NunitoSans-VariableFont_YTLC\,opsz\,wdth\,wght.ttf)
+}
+
+:root {
+  --primary-color: rgb(250, 178, 123);
+  --light-grey: rgb(245, 245, 245);
+  --light-grey-shadow: rgb(220, 220, 220);
+}
+
+body {
+  display: grid;
+  grid-template-rows: 1fr 4fr;
+  grid-template-columns: 200px 2fr; /* Adjust? */
+  gap: 20px;
+  font-family: Montserrat, sans-serif;
+  height: 100vh;
+  margin: 0;
+}
+
+/* Section: Header */
+
+.header {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  grid-area: 1 / 2 / 2 / 3;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Header: Search Bar */
+
+.header > .search-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.header > .search-bar > label {
+  cursor: pointer;
+}
+
+.header > .search-bar > input {
+  flex: 1;
+  background-color: var(--light-grey);
+  border: 0;
+  border-radius: 20px;
+  padding: 8px;
+  margin: 0;
+}
+
+/* Header: Upper Right Icons */
+
+.header > .icons {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 16px;
+}
+
+.header > .icons > .bell {
+  cursor: pointer;
+}
+
+.header > .icons > img.profile-pic {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.header > .icons > .full-name {
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Header: Greeting */
+
+.header > .greeting {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.header > .greeting > img.profile-pic {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+}
+
+.header > .greeting > .text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.header > .greeting > .text > .welcome {
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+.header > .greeting > .text > .username {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+/* Header: Actions */
+
+.header > .actions {
+  gap: 16px;
+  justify-self: end;
+  align-self: center;
+}
+
+.header > .actions > button {
+  font-size: 1rem;
+  font-weight: 500;
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 20px;
+  box-shadow: 1px 1px 4px var(--light-grey-shadow);
+  padding: 12px 20px;
+  margin: 8px;
+  cursor: pointer;
+}
+
+.header > .actions button:hover {
+  background-color: rgb(248, 170, 110);
+}
+
+/* Section: Sidebar */
+
+.sidebar {
+  display: grid;
+  grid-template-rows: min-content 1fr;
+  grid-area: 1 / 1 / 3 / 2;
+  padding: 32.5px; 
+}
+
+.sidebar > .brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.sidebar > .menu {
+  align-self: center;
+  color: rgb(90, 90, 90);
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.sidebar > .menu > .nav-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.sidebar > .menu > .nav-link + .nav-link {
+  margin-top: 4px;
+}
+
+.sidebar > .menu > .nav-link > span.material-icons {
+  font-size: 1.5rem;
+}
+
+/* Section: Main Content */
+
+.main-content {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 2fr 1fr;
+  grid-area: 2 / 2 / 3 / 3;
+  padding: 20px;
+}
+
+.section-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  padding-bottom: 16px;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+/* Main Content: My Web Development Journey */
+
+.main-content > .web-journey {
+  grid-area: 1 / 1 / 3 / 2;
+  padding: 20px;
+}
+
+.main-content > .web-journey > .portfolio {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.main-content > .web-journey > .portfolio > .card {
+  display: grid;
+  grid-template-columns: 8px 1fr;
+  font-family: Nunito-Sans;
+  border-radius: 8px;
+  box-shadow: 1px 1px 4px var(--light-grey-shadow);
+  background-color: var(--light-grey);
+  height: 180px;
+  overflow: hidden;
+}
+
+.main-content > .web-journey > .portfolio > .card > .color-bar {
+  background-color: var(--primary-color);
+}
+
+.main-content > .web-journey > .portfolio > .card > .card-content {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  overflow: scroll;
+}
+
+.main-content > .web-journey > .portfolio > .card > .card-content > .title {
+  font-weight: 600;
+  padding-bottom: 4px;
+}
+
+.main-content > .web-journey > .portfolio > .card > .card-content > .caption {
+  flex: 1;
+  font-size: 0.9rem;
+}
+
+.main-content > .web-journey > .portfolio > .card >  .card-content > .icons {
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  gap: 8px;
+  padding-top: 8px;
+}
+
+/* Main Content: About Me */
+
+.main-content > .about-me {
+  padding: 20px;
+}
+
+.main-content > .about-me > .content {
+  background-color: var(--light-grey);
+  box-shadow: 2px 2px 4px var(--light-grey-shadow);
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.main-content > .about-me > .content > .divider {
+  background-color: rgb(151, 149, 149);
+  margin: 10px 0;
+  height: 1px;
+}
+
+.main-content > .about-me > .content > .entry > .title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding-bottom: 4px;
+}
+
+.main-content > .about-me > .content > .entry > .caption {
+  font-size: 0.8rem;
+}
+
+/* Main Content: Socials */
+.main-content > .socials {
+  padding: 20px;
+}
+
+.main-content > .socials > .content {
+  background-color: var(--light-grey);
+  box-shadow: 1px 1px 4px var(--light-grey-shadow);
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.main-content > .socials > .content > .account {
+  display: flex;
+  gap: 12px;
+  padding: 6px;
+}
+
+.main-content > .socials > .content > .account > .info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.main-content > .socials > .content > .account > .info > .username {
+  font-weight: 500;
+}
+
+.main-content > .socials > .content > .account > .info > .media {
+  font-size: 0.9rem;
+  font-weight: 400;
+}
