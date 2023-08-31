@@ -1,0 +1,175 @@
+@font-face {
+  font-family: Montserrat;
+  src: url(./fonts/Montserrat-VariableFont_wght.ttf);
+}
+
+* {
+  font-family: Montserrat, sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  height: 100vh;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.4rem;
+  font-weight: 600;
+  background-color: rgb(214, 211, 209);
+  color: rgb(41, 37, 36);
+  padding: 10px 16px;
+}
+
+header button {
+  font-size: 2rem;
+  font-weight: 600;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+dialog {
+  background-color: white;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 1px 1px 4px rgb(185, 185, 185);
+  width: 40%;
+  padding: 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  color: rgb(12, 10, 9);
+  gap: 8px;
+  padding: 20px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+label {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+input, textarea, select {
+  font-size: 1rem;
+  background-color: rgb(245, 245, 244);
+  border: 0.5px solid rgb(168, 162, 158);
+  border-radius: 4px;
+  padding: 10px;
+  outline: none;
+  appearance: none;
+}
+
+textarea {
+  resize: none;
+}
+
+select {
+  width: 100%;
+  margin: 0;
+}
+
+.select-input {
+  position: relative;
+}
+
+.expand {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+
+.error {
+  font-size: 0.7rem;
+  color: rgb(213, 4, 4);
+}
+
+main {
+  flex: 1;
+}
+
+#library {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-auto-rows: min-content;
+  gap: 20px;
+  padding: 20px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  background-color: rgb(250, 250, 249);
+  color: rgb(12, 10, 9);
+  border-radius: 4px;
+  box-shadow: 1px 1px 4px rgb(168, 162, 158);
+  padding: 20px;
+  word-wrap: break-word;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card .title {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.card .delete {
+  cursor: pointer;
+}
+
+.card .author,
+.card .pages,
+.card .description {
+  font-size: 0.9rem;
+}
+
+.card .description {
+  flex: 1;
+}
+
+span.emphasis {
+  font-weight: 600;
+}
+
+button {
+  display: flex;
+  align-self: center;
+  font-weight: 500;
+  border-radius: 4px;
+  border: none;
+  padding: 8px 16px;
+  margin-top: 8px;
+  width: fit-content;
+  cursor: pointer;
+}
+
+button[type=submit] {
+  font-weight: 1rem;
+  font-weight: 600;
+  background-color: rgb(214, 211, 209);
+}
+
+footer {
+  font-family: 'Roboto Mono', monospace;
+  text-align: center;
+  background-color: rgb(214, 211, 209);
+  color: rgb(41, 37, 36);
+  padding: 16px;
+}
