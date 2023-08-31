@@ -11,10 +11,11 @@
 
 ### Full Stack JavaScript Course
 
-| Project             | Topic             | Link                                                                                   |
-| ------------------- | ----------------- | -------------------------------------------------------------------------------------- |
-| Sign Up Form        | Forms             | [Sign Up Form](https://doanvalerie.github.io/odin-projects/sign-up-form)               |
-| Admin Dashboard     | Grid              | [Admin Dashboard](https://doanvalerie.github.io/odin-projects/admin-dashboard)         |
+| Project             | Topic                           | Link                                                                           |
+| ------------------- | ------------------------------- | ------------------------------------------------------------------------------ |
+| Sign Up Form        | Forms                           | [Sign Up Form](https://doanvalerie.github.io/odin-projects/sign-up-form)       |
+| Admin Dashboard     | Grid                            | [Admin Dashboard](https://doanvalerie.github.io/odin-projects/admin-dashboard) |
+| Library             | Organizing your JavaScript Code | [Library](https://doanvalerie.github.io/odin-projects/library)                 |
  
 If any bugs are encountered, feel free to reach out! 
 
@@ -246,3 +247,40 @@ refactoring the code after learning important JavaScript concepts.
 In this project, I began playing slightly around with media queries. At this moment, I have 
 not extensively studied responsive website design. After learning proper practices, I hope to
 return to this project and prior designs to make them responsive. 
+
+### Library
+
+<table>
+  <tr>
+    <th>Link</th>
+    <th>Skills</th>
+  </tr>
+  <tr>
+    <td>
+      <a href="https://doanvalerie.github.io/odin-projects/library">Library</a>
+    </td>
+    <td>
+      <ul>
+        <li>HTML
+          <ul>
+            <li>Grid layouts</li>
+			<li>Flexbox layouts</li>
+          </ul>
+        </li>
+        <li>CSS
+          <ul>
+            <li>CSS selectors</li>
+            <li>The cascade of CSS</li>
+          </ul>
+        </li>
+		<li>JavaScript
+          <ul>
+            <li>DOM manipulation and events</li>
+			<li>Form validation</li>
+			<li>Objects & object constructors</li>
+          </ul>
+        </li>
+      </ul>
+    </td>
+  </tr>
+</table>
