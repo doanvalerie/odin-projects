@@ -52,12 +52,13 @@ body {
 main {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   gap: 20px;
   flex: 1;
   padding: 28px;
   padding-top: 0;
-  overflow: scroll;
+  overflow-x: scroll;
 }
 
 .profile {
@@ -114,7 +115,15 @@ main {
 
 .game-content {
   display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 40px;
+}
+
+@media (max-width: 1000px) {
+  .profile {
+    display: none;
+  }
 }
 
 .board {
