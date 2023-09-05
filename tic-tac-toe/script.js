@@ -28,7 +28,7 @@ const ResetActions = (function () {
 	return {
 		addResetGameListener,
 		addResetScoreListener
-	}
+	};
 })();
 
 const ProcessAnnouncements = (function () {
@@ -52,7 +52,7 @@ const ProcessAnnouncements = (function () {
 	return {
 		addElement,
 		removeElement,
-	}
+	};
 })();
 
 const Transitions = (function () {
@@ -110,7 +110,7 @@ const GameBoard = (function () {
 	const styleBoardMarker = function (box) {
 		const root = document.querySelector(':root');
 		const computedStyle = getComputedStyle(root);
-		
+
 		if (GamePlay.getCurrentPlayer() === GamePlay.player1) {
 			box.style.color = computedStyle.getPropertyValue('--p1-marker-dark-color');
 		}
@@ -127,7 +127,7 @@ const GameBoard = (function () {
 		disableBoard,
 		enableBoard,
 		styleBoardMarker
-	}
+	};
 })();	
 
 const GamePlay = (function () {
@@ -238,7 +238,7 @@ const GamePlay = (function () {
 		getLastPlayer,
 		player1,
 		player2,
-	}
+	};
 })();
 
 const WinLogic = (function () {
@@ -292,7 +292,7 @@ const WinLogic = (function () {
 		isRowWin,
 		isColumnWin,
 		isDiagonalWin
-	}
+	};
 })();
 
 ResetActions.addResetGameListener();
