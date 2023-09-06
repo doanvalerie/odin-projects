@@ -64,7 +64,7 @@ If any bugs are encountered, feel free to reach out!
 - **Inner display type**: Defines how elements inside the box are laid out. 
 	- Default: **Normal flow** where elements behave as blocks or inline boxes. 
 - **`box-sizing: border-box`**: Account for border and padding sizes in the element's width and height. 
-- **Flexbox**: Arrangement of items in row or columns.
+- **Flexbox**: Arrangement of items in rows or columns.
 	- Items grow or shrink based on defined rules.
 	- **`flex-grow`**: Flex item's growth factor
 	- **`flex-shrink`**: Flex item's shrink factor
@@ -106,10 +106,11 @@ If any bugs are encountered, feel free to reach out!
   </tr>
 </table>
 
-**Takeaway**
+**Takeaways**
 - **DOM**: Document Object Model. Representation of objects that make up the structure of a web document.
 	- Document is represented as a tree of nodes and objects.
-	- **Node**: An object with properties and methods. Ex: The document, elements, text, and comments.
+	- **Node**: An object with properties and methods.
+		- The document, elements, text, and comments.
 - HTML code parsed by browser -> Converted to the DOM.
 - **Query selector**: Uses CSS-style selectors to target nodes and returns corresponding references.
 - **Events**: Actions that occur on the webpage.
@@ -331,7 +332,7 @@ return to this project and prior designs to make them responsive.
 - **`prototype`**: Another object that has properties and functions, which the original object will inherit. 
 - JavaScript determines which properties exist or do not exist on an object by traversing the prototypal chain
 to find the property or function.
-- Prototypal chain ends at **`Object.prototype`**, from which every `prototype` object inherits properties and functions.
+- Prototypal chain ends at **`Object.prototype`**, from which every **`prototype`** object inherits properties and functions.
 
 ### Tic Tac Toe
 
