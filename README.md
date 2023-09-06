@@ -11,11 +11,12 @@
 
 ### Full Stack JavaScript Course
 
-| Project             | Topic                           | Link                                                                           |
-| ------------------- | ------------------------------- | ------------------------------------------------------------------------------ |
-| Sign Up Form        | Forms                           | [Sign Up Form](https://doanvalerie.github.io/odin-projects/sign-up-form)       |
-| Admin Dashboard     | Grid                            | [Admin Dashboard](https://doanvalerie.github.io/odin-projects/admin-dashboard) |
-| Library             | Organizing your JavaScript Code | [Library](https://doanvalerie.github.io/odin-projects/library)                 |
+| Project         | Topic                                                     | Link                                                                           |
+| ----------------| --------------------------------------------------------- | ------------------------------------------------------------------------------ |
+| Sign Up Form    | Forms                                                     | [Sign Up Form](https://doanvalerie.github.io/odin-projects/sign-up-form)       |
+| Admin Dashboard | Grid                                                      | [Admin Dashboard](https://doanvalerie.github.io/odin-projects/admin-dashboard) |
+| Library         | Organizing your JavaScript Code (Objects & Constructors)  | [Library](https://doanvalerie.github.io/odin-projects/library)                 |
+| Tic Tac Toe     | Organizing your JavaScript Code (The Module Pattern)      | [Tic Tac Toe](https://doanvalerie.github.io/odin-projects/tic-tac-toe)         |
  
 If any bugs are encountered, feel free to reach out! 
 
@@ -43,13 +44,32 @@ If any bugs are encountered, feel free to reach out!
         <li>CSS
           <ul>
             <li>Introduction to CSS selectors</li>
-            <li>The cascade of CSS</li>
+            <li>The cascade</li>
           </ul>
         </li>
       </ul>
     </td>
   </tr>
 </table>
+
+**Takeaways**
+- **HTML elements**: Content wrapped in opening and closing HTML tags. 
+- **Semantic HTML**: Usage of correct elements to reinforce meaning of web page content.
+- **The cascade**: A determination of which rules get applied to our HTML based on the specificity of the CSS declaration.
+	- Specificity is based on ID selectors (1), class selectors (2), and type selectors (3).
+- **CSS selectors**: A determination of which HTML elements to which CSS rules apply.
+- **Inheritance**: CSS properties, such as those of typography, can be inherited by an element's descendants.
+- **The box model**: Everything on a web page is a rectangular box! Layouts involve nesting and stacking boxes. 
+	- Boxes consist of content, padding, border, and margin area. 
+- **Inner display type**: Defines how elements inside the box are laid out. 
+	- Default: **Normal flow** where elements behave as blocks or inline boxes. 
+- **`box-sizing: border-box`**: Account for border and padding sizes in the element's width and height. 
+- **Flexbox**: Arrangement of items in row or columns.
+	- Items grow or shrink based on defined rules.
+	- **`flex-grow`**: Flex item's growth factor
+	- **`flex-shrink`**: Flex item's shrink factor
+	- **`flex-basis`**: Set the initial size of a flex item
+		- **`flex-basis: auto;`** Check for a width declaration (flex rows) or height declaration (flex columns).
 
 ### Rock Paper Scissors
 
@@ -71,8 +91,8 @@ If any bugs are encountered, feel free to reach out!
         </li>
         <li>CSS
           <ul>
-            <li>CSS selectors</li>
-            <li>The cascade of CSS</li>
+            <li>Selectors</li>
+            <li>The cascade</li>
           </ul>
         </li>
         <li>JavaScript
@@ -85,6 +105,16 @@ If any bugs are encountered, feel free to reach out!
     </td>
   </tr>
 </table>
+
+**Takeaway**
+- **DOM**: Document Object Model. Representation of objects that make up the structure of a web document.
+	- Document is represented as a tree of nodes and objects.
+	- **Node**: An object with properties and methods. Ex: The document, elements, text, and comments.
+- HTML code parsed by browser -> Converted to the DOM.
+- **Query selector**: Uses CSS-style selectors to target nodes and returns corresponding references.
+- **Events**: Actions that occur on the webpage.
+	- Add event listeners/handlers to react to these events.
+	- **Callbacks**: Functions passed into other functions as arguments.
 
 During the workings of my first code in JavaScript, I wanted modularity and structure, thus turning 
 to classes to encapsulate this project's data. However, upon its completion, I felt OOP principles 
@@ -113,8 +143,8 @@ refactoring the code after learning important JavaScript concepts.
         </li>
         <li>CSS
           <ul>
-            <li>CSS selectors</li>
-            <li>The cascade of CSS</li>
+            <li>Selectors</li>
+            <li>The cascade</li>
           </ul>
         </li>
         <li>JavaScript
@@ -155,8 +185,8 @@ refactoring the code after learning important JavaScript concepts.
         </li>
         <li>CSS
           <ul>
-            <li>CSS selectors</li>
-            <li>The cascade of CSS</li>
+            <li>Selectors</li>
+            <li>The cascade</li>
           </ul>
         </li>
         <li>JavaScript
@@ -192,9 +222,9 @@ refactoring the code after learning important JavaScript concepts.
         </li>
         <li>CSS
           <ul>
-            <li>CSS selectors</li>
-            <li>The cascade of CSS</li>
-			<li>CSS variables</li>
+            <li>Selectors</li>
+            <li>The cascade</li>
+			<li>Variables</li>
           </ul>
         </li>
         <li>JavaScript
@@ -212,6 +242,14 @@ refactoring the code after learning important JavaScript concepts.
     </td>
   </tr>
 </table>
+
+**Takeaways**
+- **Forms**: The user's gateway into the backend!
+- **Form control elements**: Elements that the user interacts with on the form (e.g. text boxes, dropdowns, 
+checkboxes, and buttons).
+	- Certain form controls are more difficult to style. 
+- **Regular expressions**: A sequence of characters that represents a match pattern in a string. 
+	- Incredibly useful for input validation!
 
 ### Admin Dashboard
 
@@ -234,9 +272,9 @@ refactoring the code after learning important JavaScript concepts.
         </li>
         <li>CSS
           <ul>
-            <li>CSS selectors</li>
-            <li>The cascade of CSS</li>
-			<li>CSS variables</li>
+            <li>Selectors</li>
+            <li>The cascade</li>
+			<li>Variables</li>
           </ul>
         </li>
       </ul>
@@ -244,7 +282,10 @@ refactoring the code after learning important JavaScript concepts.
   </tr>
 </table>
 
-In this project, I began playing slightly around with media queries. At this moment, I have 
+**Takeaways**
+- Grids are an incredibly useful 2D layout system that can be either static or responsive. 
+- Use fractional units to make grid tracks dynamic. 
+- In this project, I began playing slightly around with media queries. At this moment, I have 
 not extensively studied responsive website design. After learning proper practices, I hope to
 return to this project and prior designs to make them responsive. 
 
@@ -269,8 +310,8 @@ return to this project and prior designs to make them responsive.
         </li>
         <li>CSS
           <ul>
-            <li>CSS selectors</li>
-            <li>The cascade of CSS</li>
+            <li>Selectors</li>
+            <li>The cascade</li>
           </ul>
         </li>
 		<li>JavaScript
@@ -284,3 +325,64 @@ return to this project and prior designs to make them responsive.
     </td>
   </tr>
 </table>
+
+**Takeaways**
+- JavaScript is a prototype based language, where all objects have a **`prototype`**.
+- **`prototype`**: Another object that has properties and functions, which the original object will inherit. 
+- JavaScript determines which properties exist or do not exist on an object by traversing the prototypal chain
+to find the property or function.
+- Prototypal chain ends at **`Object.prototype`**, from which every `prototype` object inherits properties and functions.
+
+### Tic Tac Toe
+
+<table>
+  <tr>
+    <th>Link</th>
+    <th>Skills</th>
+  </tr>
+  <tr>
+    <td>
+      <a href="https://doanvalerie.github.io/odin-projects/tic-tac-toe">Tic Tac Toe</a>
+    </td>
+    <td>
+      <ul>
+        <li>HTML
+          <ul>
+            <li>Grid layouts</li>
+			<li>Flexbox layouts</li>
+          </ul>
+        </li>
+        <li>CSS
+          <ul>
+            <li>Selectors</li>
+            <li>The cascade</li>
+			<li>Variables</li>
+          </ul>
+        </li>
+		<li>JavaScript
+          <ul>
+            <li>DOM manipulation and events</li>
+			<li>Factory functions</li>
+			<li>The module pattern</li>
+          </ul>
+        </li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+**Takeaways**
+- `var` variables are **function scoped** whereas `let` and `const` variables are **block scoped**.
+- **Factory**: JavaScript function that returns an object.
+- Public and private scope can be emulated through **closures**.
+	- **Closures**: Functions that retain their scope despite being called outside of their scope. Created
+	every time a function is created.
+- **Lexical scope**: Scope of a function or variable based on where it was defined in the source code. 
+	- Inner functions have access to the scope in the outer function.
+- **Scope chain**: Used to resolve variables by starting at the innermost scope and searching outwards.
+- **The Module Pattern**: A way of organizing JavaScript code in modules to emulate public and private encapsulation.
+	- Define a module that returns namespaced public methods or variables that are accessible in the global scope.
+	- Emphasis on closures, scopes, and **IIFE (Immediately-Invoked Function Expressions)**
+	- **IIFE**: Function that is executed once defined. Wraps an anonymous function with lexical scope.
+	- Benefit: Avoid polluting the global namespace and name collision.
+	- Commonly used as single style objects with one instance in existence. 
