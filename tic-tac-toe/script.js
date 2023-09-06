@@ -158,11 +158,9 @@ const GamePlay = (function () {
 	}
 
 	const processRound = function (boxPlayed) {
-		const playerWon = didPlayerWin(boxPlayed.row, boxPlayed.col);
-
 		const results = {
-			playerWon: playerWon,
-			gameTied: playerWon ? false : numberTurn === 9
+			playerWon: didPlayerWin(boxPlayed.row, boxPlayed.col),
+			gameTied: this.playerWon ? false : numberTurn === 9
 		};
 
 		const gameOver = results.playerWon || results.gameTied;
