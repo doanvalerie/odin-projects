@@ -1,5 +1,9 @@
 # odin-projects
 ## Projects Overview
+
+Takeaways and relevant skills are noted under each project section in the following document.  
+If any bugs are encountered, feel free to reach out! 
+
 ### Foundations Course
 
 | Project             | Topic             | Link                                                                                   |
@@ -17,8 +21,7 @@
 | Admin Dashboard | Grid                                                      | [Admin Dashboard](https://doanvalerie.github.io/odin-projects/admin-dashboard) |
 | Library         | Organizing your JavaScript Code (Objects & Constructors)  | [Library](https://doanvalerie.github.io/odin-projects/library)                 |
 | Tic Tac Toe     | Organizing your JavaScript Code (The Module Pattern)      | [Tic Tac Toe](https://doanvalerie.github.io/odin-projects/tic-tac-toe)         |
- 
-If any bugs are encountered, feel free to reach out! 
+
 
 ## Foundations Course
 ### Landing Page
@@ -334,6 +337,25 @@ return to this project and prior designs to make them responsive.
 to find the property or function.
 - Prototypal chain ends at **`Object.prototype`**, from which every **`prototype`** object inherits properties and functions.
 
+**`this`** in JavaScript
+- **`this`**: Context of a function invocation.
+- **Context**: Value of `this`.
+	- Function invocation: `alert('Hello World!)`
+		- `this` is the global object (`window` in a browser).
+		- `this` is `undefined` in strict mode.
+	- Method invocation: `console.log('Hello World!')`
+		- `this` is the object that owns the method.
+	- Constructor invocation: `new RegExp('\\d')`
+		- `this` is the newly created object.
+	- Indirect invocation: `alert.call(undefined, 'Hello World!')`
+		- `this` is the first argument of `.call()` and `.apply()`.
+	- Bound function: `myFunction.bind(thisArg)`
+		- `this` is the first argument of `.bind()`.
+		- Returns a new function that is not invoked right away unlike `.apply()` or `.call()`.
+		- Makes a permanent context link.
+	- Arrow function: Lexically binds the context.
+		- `this` is the enclosing context where the arrow function is defined.
+
 ### Tic Tac Toe
 
 <table>
@@ -387,3 +409,16 @@ to find the property or function.
 	- **IIFE**: Function that is executed once defined. Wraps an anonymous function with lexical scope.
 	- Benefit: Avoid polluting the global namespace and name collision.
 	- Commonly used as single style objects with one instance in existence. 
+
+### Classes
+
+**Takeaways**
+- `class` keyword does the exact same thing as object constructors and prototypes.
+	- May be considered a syntactic sugar over prototype-based constructors. But there are differences!
+- The given name of a JavaScript `class` is a function whose code is provided by the `constructor`.
+	- Methods, getters, and setters are written to the prototype of the `class` name.
+- The body of a class is executed in strict mode.
+- Methods are defined on the prototype of each class instance.
+- Can declare public and privcate class fields. 
+	- Set on individual objects instead of the prototype.
+- Implement inheritance with `extends`.
