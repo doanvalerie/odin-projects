@@ -39,15 +39,17 @@ main {
 .grid {
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
   border: 1px rgb(0, 0, 0) solid;
   width: 600px;
-  height: 600px;
+  /* height: 600px; */
   margin-top: 20px;
   margin-bottom: 40px;
 }
 
 .grid-row {
   display: flex;
+  flex-grow: 1;
 }
 
 .grid-cell {
