@@ -1,32 +1,35 @@
 <!DOCTYPE html>
-<head lang="en">
-  <meta charset="utf-8">
-  <title>Etch-A-Sketch</title>
-  <link rel="stylesheet" href="./style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Bungee&family=Press+Start+2P&family=Roboto+Mono&family=Unica+One&display=swap">
-  <script src="./script.js" defer></script>
-</head>
-<body>
-  <h1 class="header">etch-a-sketch</h1>
-  <main>
-    <div class="editor">
-      <div class="color-picker">
-        <input class="color-input" type="color"></input>
-        <button class="color-selector">color</button>
+<html land="en">
+  <head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etch-A-Sketch</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Bungee&family=Press+Start+2P&family=Roboto+Mono&family=Unica+One&display=swap">
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <h1 class="header">etch-a-sketch</h1>
+    <main>
+      <div class="editor">
+        <div class="color-picker">
+          <input class="color-input" type="color"></input>
+          <button class="color-selector">color</button>
+        </div>
+        <button class="rainbow-selector">rainbow</button>
+        <div class="color-picker">
+          <input class="eraser-input" type="color"></input>
+          <button class="eraser-selector">eraser</button>
+        </div>
+        <button class="light-shader-selector">light shader</button>
+        <button class="dark-shader-selector">dark shader</button>
+        <button class="reset-selector">reset</button>
       </div>
-      <button class="rainbow-selector">rainbow</button>
-      <div class="color-picker">
-        <input class="eraser-input" type="color"></input>
-        <button class="eraser-selector">eraser</button>
-      </div>
-      <button class="light-shader-selector">light shader</button>
-      <button class="dark-shader-selector">dark shader</button>
-      <button class="reset-selector">reset</button>
-    </div>
-    <div class="grid"></div>
-    <input class="scale" type="range" min="10" max="50" value="16">
-  </main>
-  <footer>crafted by doanvalerie</footer>
-</body>
+      <div class="grid"></div>
+      <input class="scale" type="range" min="10" max="50" value="16">
+    </main>
+    <footer>crafted by doanvalerie</footer>
+  </body>
+</html>

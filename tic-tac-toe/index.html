@@ -1,51 +1,53 @@
 <!DOCTYPE html>
-<head lang="en">
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Tic Tac Toe</title>
-  <script src="./script.js" defer></script>
-  <link rel="stylesheet" href="./style.css">
-</head>
-<body>
-  <header>tic tac toe</header>
-  <main>
-    <div class="game-content">
-      <div data-player="1" class="profile">
-        <div class="marker">X</div>
-        <div class="text">
-          <div class="name">Player 1</div>
-          <div class="wins">
-            <div class="label">Wins: </div>
-            <div class="number">0</div>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="./style.css">
+	<script src="./script.js" defer></script>
+  </head>
+  <body>
+    <header>tic tac toe</header>
+    <main>
+      <div class="game-content">
+        <div data-player="1" class="profile">
+          <div class="marker">X</div>
+          <div class="text">
+            <div class="name">Player 1</div>
+            <div class="wins">
+              <div class="label">Wins: </div>
+              <div class="number">0</div>
+            </div>
+          </div>
+        </div>
+        <div class="board">
+          <div data-row="0" data-column="0" class="box"></div>
+          <div data-row="0" data-column="1" class="box"></div>
+          <div data-row="0" data-column="2" class="box"></div>
+          <div data-row="1" data-column="0" class="box"></div>
+          <div data-row="1" data-column="1" class="box"></div>
+          <div data-row="1" data-column="2" class="box"></div>
+          <div data-row="2" data-column="0" class="box"></div>
+          <div data-row="2" data-column="1" class="box"></div>
+          <div data-row="2" data-column="2" class="box"></div>
+        </div>
+        <div data-player="2" class="profile">
+          <div class="marker">O</div>
+          <div class="text">
+            <div class="name">Player 2</div>
+            <div class="wins">
+              <div class="label">Wins: </div>
+              <div class="number">0</div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="board">
-        <div data-row="0" data-column="0" class="box"></div>
-        <div data-row="0" data-column="1" class="box"></div>
-        <div data-row="0" data-column="2" class="box"></div>
-        <div data-row="1" data-column="0" class="box"></div>
-        <div data-row="1" data-column="1" class="box"></div>
-        <div data-row="1" data-column="2" class="box"></div>
-        <div data-row="2" data-column="0" class="box"></div>
-        <div data-row="2" data-column="1" class="box"></div>
-        <div data-row="2" data-column="2" class="box"></div>
+      <div class="reset-actions">
+        <button class="reset-game">Reset Game</button>
+        <button class="reset-score">Reset Score</button>
       </div>
-      <div data-player="2" class="profile">
-        <div class="marker">O</div>
-        <div class="text">
-          <div class="name">Player 2</div>
-          <div class="wins">
-            <div class="label">Wins: </div>
-            <div class="number">0</div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="reset-actions">
-      <button class="reset-game">Reset Game</button>
-      <button class="reset-score">Reset Score</button>
-    </div>
-  </main>
-  <footer>crafted by doanvalerie</footer>
-</body>
+    </main>
+    <footer>crafted by doanvalerie</footer>
+  </body>
+</html>

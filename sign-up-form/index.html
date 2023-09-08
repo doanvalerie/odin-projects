@@ -1,95 +1,98 @@
 <!DOCTYPE html>
-<head lang="en">
-  <meta charset="utf-8">
-  <title>Get Started</title>
-  <script src="./script.js" defer></script>
-  <link rel="stylesheet" href="./style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com"> 
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500&family=Montserrat:wght@400;500;700&family=Open+Sans&family=Roboto:wght@300&display=swap">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-</head>
-<body>
-  <main>
-    <div class="image-sidebar">
-      <img class="cloud" src="./images/cloud.png">
-      <h1 class="brand">Aurelia</h1>
-    </div>
-    <div class="form-sidebar">
-      <form id="registration" novalidate>
-        <div class="form-heading">
-          <img src="./images/computer.png">
-          <h2>Embark on your new adventure.<br>You <em>know</em> you want to.</br></h2>
-        </div>
-        <div class="input-fields-row">
-          <div class="input-field">
-            <span class="material-icons">person</span>
-            <div class="text-validation">
-              <input type="text" id="first-name" name="first-name" placeholder="First Name *" pattern="^[A-Za-z ]*[A-Za-z][A-Za-z ]*$" required>
-              <div class="error" aria-live="polite"></div>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Started</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500&family=Montserrat:wght@400;500;700&family=Open+Sans&family=Roboto:wght@300&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<script src="./script.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <div class="image-sidebar">
+        <img class="cloud" src="./images/cloud.png">
+        <h1 class="brand">Aurelia</h1>
+      </div>
+      <div class="form-sidebar">
+        <form id="registration" novalidate>
+          <div class="form-heading">
+            <img src="./images/computer.png">
+            <h2>Embark on your new adventure.<br>You <em>know</em> you want to.</br></h2>
+          </div>
+          <div class="input-fields-row">
+            <div class="input-field">
+              <span class="material-icons">person</span>
+              <div class="text-validation">
+                <input type="text" id="first-name" name="first-name" placeholder="First Name *" pattern="^[A-Za-z ]*[A-Za-z][A-Za-z ]*$" required>
+                <div class="error" aria-live="polite"></div>
+              </div>
+            </div>
+            <div class="input-field">
+              <span class="material-icons">person</span>
+              <div class="text-validation">
+                <input type="text" id="last-name" name="last-name" placeholder="Last Name *" pattern="^[A-Za-z ]*[A-Za-z][A-Za-z ]*$" required>
+                <div class="error" aria-live="polite"></div>
+              </div>
             </div>
           </div>
-          <div class="input-field">
-            <span class="material-icons">person</span>
-            <div class="text-validation">
-              <input type="text" id="last-name" name="last-name" placeholder="Last Name *" pattern="^[A-Za-z ]*[A-Za-z][A-Za-z ]*$" required>
-              <div class="error" aria-live="polite"></div>
+          <div class="input-fields-row">
+            <div class="input-field">
+              <span class="material-icons">mail</span>
+              <div class="text-validation">
+                <input type="email" id="email" name="email" placeholder="Email *" required>
+                <div class="error" aria-live="polite"></div>
+              </div>
+            </div>
+            <div class="input-field">
+              <span class="material-icons">call</span>
+              <div class="text-validation">
+                <input type="tel" id="phone-number" name="phone-number" placeholder="Phone * (###-###-####)" pattern="^[0-9]{3}-[0-9]{3}-[0-9]{4}$" required>
+                <div class="error" aria-live="polite"></div>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="input-fields-row">
-          <div class="input-field">
-            <span class="material-icons">mail</span>
-            <div class="text-validation">
-              <input type="email" id="email" name="email" placeholder="Email *" required>
-              <div class="error" aria-live="polite"></div>
+          <div class="input-fields-row">
+            <div class="input-field">
+              <span class="material-icons">lock</span>
+              <div class="text-validation">
+                <input type="password" id="password" name="password" placeholder="Password *" minlength="8" required>
+                <div class="error" aria-live="polite"></div>
+              </div>
+            </div>
+            <div class="input-field">
+              <span class="material-icons">lock</span>
+              <div class="text-validation">
+                <input type="password" id="confirm-password" name="password-confirmation" placeholder="Confirm Password *" required>
+                <div class="error" aria-live="polite"></div>
+              </div>
             </div>
           </div>
-          <div class="input-field">
-            <span class="material-icons">call</span>
-            <div class="text-validation">
-              <input type="tel" id="phone-number" name="phone-number" placeholder="Phone * (###-###-####)" pattern="^[0-9]{3}-[0-9]{3}-[0-9]{4}$" required>
-              <div class="error" aria-live="polite"></div>
+          <div class="agreements">	
+            <div class="checkbox-input-field">
+              <input type="checkbox" id="mailing-list">
+              <label for="mailing-list" name="get-mail">Join Aurelia's mailing list to keep up with the latest mobile news, innovation, and technology.</label>
+            </div>
+            <div class="checkbox-input-field">
+              <input type="checkbox" id="terms-conditions" required>
+              <div class="text-content">
+                <label for="terms-conditions" name="user-agreed">I have read and agreed with the <span class="link">Terms and Conditions</span> and acknowledged the <span class="link">Global Privacy Statement</span>.</label>
+			    <div class="error" aria-live="polite"></div>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="input-fields-row">
-          <div class="input-field">
-            <span class="material-icons">lock</span>
-            <div class="text-validation">
-              <input type="password" id="password" name="password" placeholder="Password *" minlength="8" required>
-              <div class="error" aria-live="polite"></div>
-            </div>
+        </form>
+        <div class="action">
+          <button type="submit" form="registration">Continue</button>
+          <div class="login">
+            <h3>Already have an account?</h3>
+            <button>Log In</button>
           </div>
-          <div class="input-field">
-            <span class="material-icons">lock</span>
-            <div class="text-validation">
-              <input type="password" id="confirm-password" name="password-confirmation" placeholder="Confirm Password *" required>
-              <div class="error" aria-live="polite"></div>
-            </div>
-          </div>
-        </div>
-        <div class="agreements">	
-          <div class="checkbox-input-field">
-            <input type="checkbox" id="mailing-list">
-            <label for="mailing-list" name="get-mail">Join Aurelia's mailing list to keep up with the latest mobile news, innovation, and technology.</label>
-          </div>
-          <div class="checkbox-input-field">
-            <input type="checkbox" id="terms-conditions" required>
-            <div class="text-content">
-              <label for="terms-conditions" name="user-agreed">I have read and agreed with the <span class="link">Terms and Conditions</span> and acknowledged the <span class="link">Global Privacy Statement</span>.</label>
-			  <div class="error" aria-live="polite"></div>
-            </div>
-          </div>
-        </div>
-      </form>
-      <div class="action">
-        <button type="submit" form="registration">Continue</button>
-        <div class="login">
-          <h3>Already have an account?</h3>
-          <button>Log In</button>
         </div>
       </div>
-    </div>
-  </main>		
-</body>
+    </main>		
+  </body>
+</html>
