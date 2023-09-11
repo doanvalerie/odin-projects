@@ -15,12 +15,13 @@ If any bugs are encountered, feel free to reach out!
 
 ### Full Stack JavaScript Course
 
-| Project         | Topic                                                     | Link                                                                           |
-| ----------------| --------------------------------------------------------- | ------------------------------------------------------------------------------ |
-| Sign Up Form    | Forms                                                     | [Sign Up Form](https://doanvalerie.github.io/odin-projects/sign-up-form)       |
-| Admin Dashboard | Grid                                                      | [Admin Dashboard](https://doanvalerie.github.io/odin-projects/admin-dashboard) |
-| Library         | Organizing your JavaScript Code (Objects & Constructors)  | [Library](https://doanvalerie.github.io/odin-projects/library)                 |
-| Tic Tac Toe     | Organizing your JavaScript Code (The Module Pattern)      | [Tic Tac Toe](https://doanvalerie.github.io/odin-projects/tic-tac-toe)         |
+| Project         | Topic                                                     | Link                                                                                |
+| ----------------| --------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| Sign Up Form    | Forms                                                     | [Sign Up Form](https://doanvalerie.github.io/odin-projects/sign-up-form)            |
+| Admin Dashboard | Grid                                                      | [Admin Dashboard](https://doanvalerie.github.io/odin-projects/admin-dashboard)      |
+| Library         | Organizing your JavaScript Code (Objects & Constructors)  | [Library](https://doanvalerie.github.io/odin-projects/library)                      |
+| Tic Tac Toe     | Organizing your JavaScript Code (The Module Pattern)      | [Tic Tac Toe](https://doanvalerie.github.io/odin-projects/tic-tac-toe)              |
+| Restaurant Page | Organizing your JavaScript Code (Webpack & Modules)       | [Restaurant Page](https://doanvalerie.github.io/odin-projects/restaurant-page/dist) |
 
 
 ## Foundations Course
@@ -234,12 +235,12 @@ refactoring the code after learning important JavaScript concepts.
         <li>JavaScript
           <ul>
             <li>DOM manipulation and events</li>
-			<li>Form validation</li>
+			<li><strong>Form validation</strong></li>
           </ul>
         </li>
 		<li>Extra
           <ul>
-            <li>Regular Expressions</li>
+            <li><strong>Regular Expressions</strong></li>
           </ul>
         </li>
       </ul>
@@ -270,7 +271,7 @@ checkboxes, and buttons).
       <ul>
         <li>HTML
           <ul>
-            <li>Grid layouts</li>
+            <li><strong>Grid layouts</strong></li>
 			<li>Flexbox layouts</li>
           </ul>
         </li>
@@ -321,8 +322,8 @@ return to this project and prior designs to make them responsive.
 		<li>JavaScript
           <ul>
             <li>DOM manipulation and events</li>
-			<li>Form validation</li>
-			<li>Objects & object constructors</li>
+			<li><strong>Form validation</strong></li>
+			<li><strong>Objects & object constructors</strong></li>
           </ul>
         </li>
       </ul>
@@ -385,8 +386,8 @@ to find the property or function.
 		<li>JavaScript
           <ul>
             <li>DOM manipulation and events</li>
-			<li>Factory functions</li>
-			<li>The module pattern</li>
+			<li><strong>Factory functions</strong></li>
+			<li><strong>The module pattern</strong></li>
           </ul>
         </li>
       </ul>
@@ -422,3 +423,41 @@ to find the property or function.
 - Can declare public and privcate class fields. 
 	- Set on individual objects instead of the prototype.
 - Implement inheritance with `extends`.
+
+### Restaurant Page
+
+<table>
+  <tr>
+    <th>Link</th>
+    <th>Skills</th>
+  </tr>
+  <tr>
+    <td>
+      <a href="https://doanvalerie.github.io/odin-projects/restaurant-page/dist">Restaurant Page</a>
+    </td>
+    <td>
+      <ul>
+        <li>HTML
+          <ul>
+            <li>Grid layouts</li>
+			<li>Flexbox layouts</li>
+          </ul>
+        </li>
+        <li>CSS
+          <ul>
+            <li>Selectors</li>
+            <li>The cascade</li>
+			<li>Variables</li>
+          </ul>
+        </li>
+		<li>JavaScript
+          <ul>
+            <li>DOM manipulation and events</li>
+			<li><strong>ES6 Modules</strong></li>
+			<li><strong>Webpack</strong></li>
+          </ul>
+        </li>
+      </ul>
+    </td>
+  </tr>
+</table>
