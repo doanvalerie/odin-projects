@@ -4,8 +4,8 @@
 }
 
 @font-face {
-	font-family: 'Hullist';
-	src: url(./fonts/Hullist.otf);
+	font-family: 'Montserrat';
+	src: url(./fonts/Montserrat-VariableFont_wght.ttf);
 }
 
 @font-face {
@@ -13,15 +13,13 @@
 	src: url(./fonts/Raleway-VariableFont_wght.ttf);
 }
 
-@font-face {
-	font-family: 'Montserrat';
-	src: url(./fonts/Montserrat-VariableFont_wght.ttf);
-}
-
 :root {
 	--hot-pink: rgb(215, 72, 134);
-	--light-pink: rgb(255, 217, 223);
+	--light-pink: rgb(255, 214, 214);
 	--grey: rgb(72, 74, 78);
+	--blush-shadow: rgb(214, 167, 167);
+	--grey-shadow: rgb(169, 167, 167);
+	--menu-color: rgb(255, 246, 247);
 }
 
 * {
@@ -82,11 +80,12 @@ nav {
 #heading {
 	font-size: 3rem;
 	font-weight: 600;
-	text-shadow: 1px 1px 1px rgb(88, 85, 85);
+	text-shadow: 1px 1px 1px var(--grey-shadow);
 }
 
 #location {
 	color: var(--hot-pink);
+	text-shadow: 1px 1px 1px var(--blush-shadow);
 }
 
 #description {
@@ -206,7 +205,7 @@ span.emphasis {
 	gap: 8px;
 	color: var(--hot-pink);
 	margin: 0;
-	text-shadow: 1px 1px 1px rgb(214, 167, 167);
+	text-shadow: 1px 1px 1px var(--blush-shadow);
 }
 
 #about h2 {
@@ -242,8 +241,8 @@ span.emphasis {
 	flex: 1;
 	gap: 20px;
 	font-family: 'Montserrat';
-	background-color: rgb(255, 246, 247);
-	box-shadow: 1px 1px 4px grey;
+	background-color: var(--menu-color);
+	box-shadow: 1px 1px 4px var(--grey-shadow);
 	padding: 20px;
 	margin: 50px 10%;
 }

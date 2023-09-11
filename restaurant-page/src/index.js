@@ -11,16 +11,22 @@ loadHome();
 addTabListener();
 
 function addTabListener() {
+	const logo = document.getElementById('logo');
 	const tabsNL = document.querySelectorAll('#tabs>button');
-	tabsNL.forEach(tab => {
-		tab.addEventListener('click', wipeContent);
-	});
 
 	const tabLoaders = [loadHome, loadAbout, loadMenu];
 	const tabsArr = Array.from(tabsNL);
 	for (let i = 0; i < tabsArr.length; ++i) {
-		tabsArr[i].addEventListener('click', tabLoaders[i]);
+		tabsArr[i].addEventListener('click', () => {
+			wipeContent();
+			tabLoaders[i]();
+		});
 	}
+
+	logo.addEventListener('click', () => {
+		wipeContent();
+		loadHome();
+	});
 }
 
 function wipeContent() {

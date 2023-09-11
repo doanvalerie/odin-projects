@@ -25,7 +25,7 @@ function appendMenu() {
 	];
 
 	const dishDescriptions = [
-		'Fluffy rice pancakes with fresh fruit, butterscotch drizzle, and bubblegum cream',
+		'Fluffy rice pancakes with fresh fruit, butterscotch drizzle, and bubblegum cream.',
 		'Toasted milk bread with a runny egg, crispy bacon, and jelly boba delight.',
 		'Soft caramel egg flan w/ fresh cream and condensed milk.'
 	];
