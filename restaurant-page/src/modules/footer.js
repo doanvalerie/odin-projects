@@ -1,29 +1,31 @@
-import TuxedoSam from '../assets/footer/tuxedo-sam.webp';
-import Cinnamoroll from '../assets/footer/cinnamoroll.png';
-import Pompompurin from '../assets/footer/pompompurin.png';
+import TuxedoSamIcon from '../assets/footer/tuxedo-sam.jpg';
+import CinnamorollIcon from '../assets/footer/cinnamoroll.jpg';
+import PompompurinIcon from '../assets/footer/pompompurin.jpg';
 
 export default function loadFooter() {
 	const footer = document.createElement('footer');
 
-	appendAboutUs(footer);
+	appendInformation(footer);
 	appendPolicies(footer);
 
 	document.body.append(footer);
 }
 
-function appendAboutUs(footer) {
-	const aboutUs = document.createElement('div');
-	aboutUs.setAttribute('id', 'about-us');
+function appendInformation(footer) {
+	const information = document.createElement('div');
+	information.setAttribute('id', 'informational');
 
-	const tuxedoSamImage = new Image();
-	tuxedoSamImage.src = TuxedoSam;
-	const cinnamorollImage = new Image();
-	cinnamorollImage.src = Cinnamoroll;
-	const pompompurinImage = new Image();
-	pompompurinImage.src = Pompompurin;
-	const images = [tuxedoSamImage, cinnamorollImage, pompompurinImage];
+	const tuxedoSamIcon = new Image();
+	tuxedoSamIcon.src = TuxedoSamIcon;
 
-	const cardClasses = ['address', 'phone', 'hours'];
+	const cinnamorollIcon = new Image();
+	cinnamorollIcon.src = CinnamorollIcon;
+
+	const pompompurinIcon = new Image();
+	pompompurinIcon.src = PompompurinIcon;
+
+	const icons = [tuxedoSamIcon, cinnamorollIcon, pompompurinIcon];
+
 	const cardTitles = ['Address', 'Contact', 'Hours'];
 	const cardCaptions = [
 		'Hello Kitty Cafe<br>' + 
@@ -36,14 +38,15 @@ function appendAboutUs(footer) {
 
 		'<span class="emphasis">Mon - Fri</span>: 11:00 to 18:00<br>' +
 		'<span class="emphasis">Sat</span>: 10:00 to 19:00<br>' +
-		'<span class="emphasis">Sun</span>: Closed'
+		'<span class="emphasis">Sun</span>: Closed<br>'
 	];
 
 	for (let i = 0; i < cardTitles.length; ++i) {
 		const card = document.createElement('div');
-		card.classList.add('card', `${cardClasses[i]}`);
+		card.classList.add('card');
 
 		const text = document.createElement('div');
+		text.classList.add('text');
 
 		const title = document.createElement('p');
 		title.classList.add('title');
@@ -53,11 +56,11 @@ function appendAboutUs(footer) {
 		caption.innerHTML = cardCaptions[i];
 
 		text.append(title, caption);
-		card.append(images[i], text);
-		aboutUs.append(card);
+		card.append(icons[i], text);
+		information.append(card);
 	}
 
-	footer.append(aboutUs);
+	footer.append(information);
 }
 
 function appendPolicies(footer) {

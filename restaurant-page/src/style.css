@@ -4,11 +4,6 @@
 }
 
 @font-face {
-	font-family: 'Playfair Display';
-	src: url(./fonts/PlayfairDisplay-VariableFont_wght.ttf);
-}
-
-@font-face {
 	font-family: 'Hullist';
 	src: url(./fonts/Hullist.otf);
 }
@@ -18,24 +13,32 @@
 	src: url(./fonts/Raleway-VariableFont_wght.ttf);
 }
 
+@font-face {
+	font-family: 'Montserrat';
+	src: url(./fonts/Montserrat-VariableFont_wght.ttf);
+}
+
 :root {
-	--light-pink: rgb(255, 217, 223);
-	--font-grey: rgb(72, 74, 78);
 	--hot-pink: rgb(215, 72, 134);
+	--light-pink: rgb(255, 217, 223);
+	--grey: rgb(72, 74, 78);
 }
 
 * {
-	color: var(--font-grey);
+	color: var(--grey);
 }
 
 body {
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
 	margin: 0;
 }
 
 #content {
 	display: flex;
 	flex-direction: column;
-	height: 100vh;
+	flex: 1;
 }
 
 nav {
@@ -56,7 +59,6 @@ nav {
 	font-size: 1rem;
 	letter-spacing: 0.2rem;
 	background-color: transparent;
-	color: var(--font-grey);
 	border: none;
 	cursor: pointer;
 }
@@ -69,14 +71,12 @@ nav {
 #hero {
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	flex: 1;
 	gap: 40px;
+	font-family: 'Montserrat';
+	text-align: center;
 	background: url(./assets/home/hero-bg.png) no-repeat;
 	background-size: cover;
 	padding: 40px 30px;
-	text-align: center;
 }
 
 #heading {
@@ -96,7 +96,6 @@ nav {
 #actions {
 	display: flex;
 	justify-content: center;
-	align-items: center;
 	gap: 40px;
 }
 
@@ -107,8 +106,8 @@ nav {
 	font-family: 'Raleway';
 	font-size: 1rem;
 	letter-spacing: 0.1rem;
-	border: 1px solid;
 	background-color: white;
+	border: 1px solid;
 	padding: 16px 30px;
 	cursor: pointer;
 }
@@ -131,7 +130,7 @@ footer {
 	font-family: 'Raleway';
 }
 
-#about-us {
+#informational {
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
@@ -139,29 +138,29 @@ footer {
 	padding: 20px;
 }
 
-#about-us .card {
+#informational .card {
 	display: flex;
 	align-items: center;
 	gap: 16px;
 	font-size: 1.2rem;
 	border-radius: 12px;
+	padding: 20px;
 	height: 200px;
 	width: 400px;
-	padding: 20px;
 }
 
-#about-us img {
+#informational img {
 	width: 180px;
 	height: auto;
 }
 
-.card div {
+#informational .text {
 	text-align: center;
 	height: 80%;
 }
 
-#about-us .title {
-	font-family: 'Playfair Display';
+#informational .title {
+	font-family: 'Montserrat';
 	font-weight: 600;
 	color: var(--hot-pink);
 }
@@ -175,4 +174,60 @@ footer {
 
 span.emphasis {
 	font-weight: 500;
+}
+
+/* ABOUT */
+
+#about {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	padding: 50px 10%;
+	gap: 50px;
+	background-image: url(./assets/about/about-bg.png);
+}
+
+#about .text {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	background-color: rgb(255, 250, 250);
+	padding: 40px;
+	border-radius: 20px;
+}
+
+#about h1 {
+	font-family: 'Montserrat';
+	font-size: 1.8rem;
+	letter-spacing: 0.1rem;
+	display: flex;
+	align-self: center;
+	gap: 8px;
+	color: var(--hot-pink);
+	margin: 0;
+	text-shadow: 1px 1px 1px rgb(214, 167, 167);
+}
+
+#about h2 {
+	letter-spacing: 0.05rem;
+	font-family: 'Raleway';
+	font-size: 1.2rem;
+	font-weight: 400;
+}
+
+#about h1 img {
+	width: 2.5rem;
+}
+
+#gallery {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 20px;
+	padding: 20px;
+}
+
+#gallery img {
+	width: 200px;
 }

@@ -1,12 +1,11 @@
-import GIF from '../assets/home/cooking.gif';
-import MyMelodyHead from '../assets/home/my-melody-head.png';
-import KuromiHead from '../assets/home/kuromi-head.png';
+import CookingGIF from '../assets/home/cooking.gif';
+import MyMelodyIcon from '../assets/home/my-melody-head.jpg';
+import KuromiIcon from '../assets/home/kuromi-head.jpg';
 
 const content = document.getElementById('content');
 
 export default function loadHome() {
 	appendHero();
-	document.body.append(content);
 }
 
 function appendHero() {
@@ -23,7 +22,7 @@ function appendMainContent(hero) {
 	const mainContent = document.createElement('div');
 
 	const cookingGIF = new Image();
-	cookingGIF.src = GIF;
+	cookingGIF.src = CookingGIF;
 
 	const heading = document.createElement('div');
 	heading.setAttribute('id', 'heading');
@@ -42,13 +41,13 @@ function appendActions(hero) {
 	actions.setAttribute('id', 'actions');
 	const actionTitles = ['RESERVE TABLE', 'ORDER ONLINE'];
 
-	const myMelodyHeadIcon = new Image();
-	myMelodyHeadIcon.src = MyMelodyHead;
+	const myMelodyIcon = new Image();
+	myMelodyIcon.src = MyMelodyIcon;
 
-	const kuromiHeadIcon = new Image();
-	kuromiHeadIcon.src = KuromiHead;
+	const kuromiIcon = new Image();
+	kuromiIcon.src = KuromiIcon;
 
-	const icons = [kuromiHeadIcon, myMelodyHeadIcon];
+	const icons = [kuromiIcon, myMelodyIcon];
 	icons.forEach(icon => icon.classList.add('icon'));
 
 	for (let i = 0; i < actionTitles.length; ++i) {

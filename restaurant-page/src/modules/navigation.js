@@ -1,4 +1,5 @@
 export default function loadNavigation() {
+	const content = document.getElementById('content');
 	const nav = document.createElement('nav');
 
 	const logo = document.createElement('div');
@@ -15,5 +16,5 @@ export default function loadNavigation() {
 	}
 
 	nav.append(logo, tabs);
-	document.body.append(nav);
+	document.body.insertBefore(nav, content)
 }
