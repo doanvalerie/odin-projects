@@ -1,0 +1,16 @@
+#search_form {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+}
+
+#search_form input {
+  flex: 1;
+  font-size: 1rem;
+  padding: 0.5rem;
+  outline: none;
+  background-color: transparent;
+  border: none;
+  border-bottom: 0.1rem white solid;
+}

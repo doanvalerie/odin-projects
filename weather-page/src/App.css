@@ -1,0 +1,21 @@
+#root {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin: 1rem;
+}
+
+#upper_content {
+  display: flex;
+}
+
+#left_upper_content {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.block {
+  padding: 1.5rem;
+  overflow: scroll;
+}

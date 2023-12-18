@@ -1,0 +1,5 @@
+#forecast_summary {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
