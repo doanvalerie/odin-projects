@@ -2,7 +2,7 @@ import format from 'date-fns/format';
 
 async function fetchWeatherData(location) {
   const response = await fetch(
-    `http://api.weatherapi.com/v1/current.json?key=e15e58dde11c4abf89a54416231712&q=${location}`
+    `https://api.weatherapi.com/v1/current.json?key=e15e58dde11c4abf89a54416231712&q=${location}`
   );
   const data = await response.json();
   const weatherData = {};
