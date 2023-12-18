@@ -22,7 +22,7 @@ If any bugs are encountered, feel free to reach out!
 | Library         | Organizing your JavaScript Code (Objects & Constructors)  | [Library](https://doanvalerie.github.io/odin-projects/library)                      |
 | Tic Tac Toe     | Organizing your JavaScript Code (The Module Pattern)      | [Tic Tac Toe](https://doanvalerie.github.io/odin-projects/tic-tac-toe)              |
 | Restaurant Page | Organizing your JavaScript Code (Webpack & Modules)       | [Restaurant Page](https://doanvalerie.github.io/odin-projects/restaurant-page/dist) |
-
+| Weather Page    | Asynchronous JavaScript and APIs                          | [Weather Page](https://doanvalerie-weather-page.netlify.app)                        |
 
 ## Foundations Course
 ### Landing Page
