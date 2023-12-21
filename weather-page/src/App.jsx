@@ -26,9 +26,9 @@ function App() {
   return (
     <>
       {!weatherData ? (
-        <h1 id="loading">
-          <WiCloudy size={200} />
-        </h1>
+        <div id="loading">
+          <WiCloudy size={500} />
+        </div>
       ) : (
         <>
           <div id="upper_content">

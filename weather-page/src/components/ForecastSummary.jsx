@@ -1,26 +1,26 @@
 import PropTypes from 'prop-types';
-import { WiCloudyGusts } from 'weather-icons-react';
+import icons from '../util/icons';
 import './ForecastSummary.css';
 
 function ForecastSummary({ location, data }) {
   return (
     <div id="forecast_summary" className="block">
       <div id="left_summary">
-        <h2>
+        <h1>
           {location.country === 'United States of America'
             ? `${location.name}, ${location.region}`
             : `${location.name}, ${location.country}`}
-        </h2>
-        <h3>
+        </h1>
+        <h2>
           {data.date}
           <br />
           {data.time}
-        </h3>
-        <h1>{data.tempC}°C</h1>
+        </h2>
+        <h2 id="forecast_temp">{data.tempC}°C</h2>
       </div>
       <div id="right_summary">
         <h2>{data.condition}</h2>
-        <WiCloudyGusts size={100} />
+        {icons.get(data.condition)}
       </div>
     </div>
   );

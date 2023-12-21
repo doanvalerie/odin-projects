@@ -21,10 +21,9 @@ function HourlyForecast({ data }) {
 }
 
 function HourlyBlock({ time, temp, condition }) {
-  // console.log(condition);
   return (
     <div className="hourly_block">
-      <h3>{time}</h3>
+      <h3 className="hourly_time">{time}</h3>
       {icons.get(condition)}
       <h3>{temp}°C</h3>
     </div>

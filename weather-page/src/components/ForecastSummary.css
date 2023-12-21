@@ -3,3 +3,14 @@
   justify-content: space-between;
   flex-wrap: wrap;
 }
+
+#right_summary {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#forecast_temp {
+  font-size: 2rem;
+}
