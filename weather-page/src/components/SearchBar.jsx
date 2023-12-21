@@ -11,14 +11,17 @@ function SearchBar({ updateWeatherData }) {
   };
 
   return (
-    <form id="search_form" onSubmit={processSearch}>
-      <IoSearchSharp id="search_icon" />
-      <input
-        name="location"
-        type="text"
-        placeholder="search for cities"
-      ></input>
-    </form>
+    <div id="header">
+      <form id="search_form" onSubmit={processSearch}>
+        <IoSearchSharp id="search_icon" />
+        <input
+          name="location"
+          type="text"
+          placeholder="search for cities"
+        ></input>
+      </form>
+      <div id="credit">Front-end design inspired by bscottnz</div>
+    </div>
   );
 }
 
