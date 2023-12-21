@@ -1,6 +1,9 @@
 import SearchBar from './components/SearchBar';
 import ForecastSummary from './components/ForecastSummary';
+import AirConditions from './components/AirConditions';
+import HourlyForecast from './components/HourlyForecast';
 import fetchWeatherData from './util/api';
+import { WiCloudy } from 'weather-icons-react';
 import { useEffect, useState } from 'react';
 import './App.css';
 
@@ -23,18 +26,23 @@ function App() {
   return (
     <>
       {!weatherData ? (
-        <div>Loading!</div>
+        <h1 id="loading">
+          <WiCloudy size={200} />
+        </h1>
       ) : (
-        <main>
+        <>
           <div id="upper_content">
-            <div id="left_upper_content">
-              <SearchBar updateWeatherData={handleWeatherData} />
-              <ForecastSummary data={weatherData.forecastSummary} />
-            </div>
-            <div id="right_upper_content"></div>
+            <SearchBar updateWeatherData={handleWeatherData} />
+            <ForecastSummary
+              location={weatherData.location}
+              data={weatherData.current}
+            />
+            <AirConditions data={weatherData.current} />
           </div>
-          <div id="lower_content"></div>
-        </main>
+          <div id="lower_content">
+            <HourlyForecast data={weatherData.hourly} />
+          </div>
+        </>
       )}
     </>
   );

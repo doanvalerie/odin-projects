@@ -2,21 +2,21 @@ import PropTypes from 'prop-types';
 import { WiCloudyGusts } from 'weather-icons-react';
 import './ForecastSummary.css';
 
-function ForecastSummary({ data }) {
+function ForecastSummary({ location, data }) {
   return (
     <div id="forecast_summary" className="block">
       <div id="left_summary">
         <h2>
-          {data.country === 'United States of America'
-            ? `${data.name}, ${data.region}`
-            : `${data.name}, ${data.country}`}
+          {location.country === 'United States of America'
+            ? `${location.name}, ${location.region}`
+            : `${location.name}, ${location.country}`}
         </h2>
-        <h4>
+        <h3>
           {data.date}
           <br />
           {data.time}
-        </h4>
-        <h1>{data.tempCelsius}°C</h1>
+        </h3>
+        <h1>{data.tempC}°C</h1>
       </div>
       <div id="right_summary">
         <h2>{data.condition}</h2>
@@ -27,13 +27,16 @@ function ForecastSummary({ data }) {
 }
 
 ForecastSummary.propTypes = {
-  data: PropTypes.shape({
+  location: PropTypes.shape({
     region: PropTypes.string,
     country: PropTypes.string,
     name: PropTypes.string,
+  }),
+
+  data: PropTypes.shape({
     date: PropTypes.string,
     time: PropTypes.string,
-    tempCelsius: PropTypes.number,
+    tempC: PropTypes.number,
     condition: PropTypes.string,
   }),
 };

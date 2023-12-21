@@ -1,0 +1,23 @@
+#hourly_forecast {
+  display: flex;
+  flex-direction: column;
+}
+
+#forecast_row {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 3rem;
+  overflow: scroll;
+  width: min-content;
+}
+
+.hourly_block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h2 {
+  padding-bottom: 1rem;
+}

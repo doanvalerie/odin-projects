@@ -2,20 +2,26 @@
   display: flex;
   flex-direction: column;
   flex: 1;
-  margin: 1rem;
+  gap: var(--main-content-gaps);
+  margin: var(--main-content-gaps);
+}
+
+#loading {
+  display: flex;
+  flex-direction: center;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
 }
 
 #upper_content {
   display: flex;
-}
-
-#left_upper_content {
-  display: flex;
   flex-direction: column;
-  width: 50%;
+  flex: 1;
+  gap: var(--main-content-gaps);
+  width: 100%;
 }
 
 .block {
-  padding: 1.5rem;
   overflow: scroll;
 }

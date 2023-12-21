@@ -12,7 +12,7 @@ function SearchBar({ updateWeatherData }) {
 
   return (
     <form id="search_form" onSubmit={processSearch}>
-      <IoSearchSharp />
+      <IoSearchSharp id="search_icon" />
       <input
         name="location"
         type="text"

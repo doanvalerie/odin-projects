@@ -1,0 +1,28 @@
+#air_conditions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sub-content-gaps);
+  justify-content: space-between;
+}
+
+.ac_col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sub-content-gaps);
+}
+
+.ac_desc {
+  display: flex;
+  align-items: center;
+  gap: var(--sub-content-gaps);
+  font-weight: 600;
+}
+
+.ac_text {
+  display: flex;
+  flex-direction: column;
+}
+
+.ac_field {
+  opacity: 60%;
+}
