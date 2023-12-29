@@ -21,7 +21,7 @@ function serveStaticPage(data, res) {
 
 const server = http.createServer((req, res) => {
   const pathname = req.url;
-  let html;
+  let html = "404";
 
   if (pathname == "/") {
     html = "./pages/index.html";
@@ -38,4 +38,6 @@ const server = http.createServer((req, res) => {
   });
 });
 
-server.listen(port, hostname);
+server.listen(port, hostname, () => {
+	console.log(`App running on port ${port}.`);
+});
