@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <form method="POST" action="/new" id="form1">
+	  <h1><%= title %></h1>
+      <div class="data">
+        <label for="title">Title</label>
+        <input id="title" name="title" type="text" required/>
+      </div>
+      <div class="data">
+        <label for="user">Username</label>
+        <input id="user" name="user" type="text" required/>
+      </div>
+      <div class="data">
+        <label for="text">Message</label>
+        <textarea id="text" name="text" type="text" rows="5" required></textarea>
+      </div>
+	  <div id="form_buttons">
+		<button type="button" onclick="location.href='/'">RETURN</button>
+		<button type="submit" form="form1">SUBMIT</button>
+	  </div>
+    </form>
+  </body>
+</html>
+

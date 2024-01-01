@@ -1,0 +1,6 @@
+{
+  "[javascript][json][ejs]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2
+  }
+}
