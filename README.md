@@ -22,6 +22,7 @@ If any bugs are encountered, feel free to reach out!
 | Library         | Organizing your JavaScript Code (Objects & Constructors)  | [Library](https://doanvalerie.github.io/odin-projects/library)                      |
 | Tic Tac Toe     | Organizing your JavaScript Code (The Module Pattern)      | [Tic Tac Toe](https://doanvalerie.github.io/odin-projects/tic-tac-toe)              |
 | Restaurant Page | Organizing your JavaScript Code (Webpack & Modules)       | [Restaurant Page](https://doanvalerie.github.io/odin-projects/restaurant-page/dist) |
+| Todo List       | Organizing your JavaScript Code (Classes)                 | [Todo List](https://doanvalerie.github.io/odin-projects/todo-list/dist)             |
 | Weather Page    | Asynchronous JavaScript and APIs                          | [Weather Page](https://doanvalerie-weather-page.netlify.app)                        |
 | Basic Informational Site | Introduction to NodeJS                           | TBA
 | Message Board   | Express & Mongoose                                        | [Message Board](https://sticky-note-board.fly.dev)                                  |
