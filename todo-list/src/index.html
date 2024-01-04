@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Taskify.</title>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-group">
+        <img class="nav-icon" src="./icons/menu.svg" />
+      </div>
+      <div id="web-title">Taskify.</div>
+      <div class="nav-group">
+        <img class="nav-icon" id="add-entry" src="./icons/add.svg" />
+        <img class="nav-icon" src="./icons/notifications.svg" />
+        <img class="nav-icon" src="./icons/home.svg" />
+      </div>
+    </nav>
+    <main>
+      <div id="sidebar">
+        <div id="main-sect-tabs" class="sb-sect">
+          <div data-tab="Inbox" class="tab">
+            <img src="./icons/inbox.svg" />
+            Inbox
+          </div>
+          <div data-tab="Today" class="tab">
+            <img src="./icons/today_calendar.svg" />
+            Today
+          </div>
+          <div data-tab="Week" class="tab">
+            <img src="./icons/date_range.svg" />
+            Week
+          </div>
+          <div data-tab="Important" class="tab">
+            <img src="./icons/star.svg" />
+            Important
+          </div>
+          <div data-tab="Completed" class="tab">
+            <img src="./icons/check.svg" />
+            Completed
+          </div>
+        </div>
+        <div id="proj-sect-tabs" class="sb-sect">
+          <div class="sb-sect-label">
+            Project
+            <img id="add-project" src="./icons/add.svg" />
+          </div>
+        </div>
+      </div>
+      <div id="todo-content">
+        <div id="todo-heading">Inbox</div>
+        <div id="list"></div>
+      </div>
+    </main>
+    <dialog id="proj-dialog">
+      <form id="proj-form">
+        <div class="form-heading">New Project</div>
+        <div class="divider"></div>
+        <div class="input-list">
+          <input
+            type="text"
+            id="proj-name"
+            class="validate"
+            name="proj-name"
+            placeholder="Name"
+            required
+          />
+          <button type="submit">Submit</button>
+        </div>
+      </form>
+    </dialog>
+    <dialog id="entry-dialog">
+      <form id="entry-form">
+        <div class="form-heading">New Entry</div>
+        <div class="input-list">
+          <div class="left-entry-fields">
+            <div class="field">
+              <label for="title">Title</label>
+              <input
+                type="text"
+                id="title"
+                class="validate"
+                name="title"
+                placeholder="Title"
+                required
+              />
+            </div>
+            <div id="note-description" class="field">
+              <label for="details">Details</label>
+              <textarea
+                type="text"
+                id="details"
+                class="validate"
+                name="details"
+                placeholder="Details"
+                cols="40"
+                required
+              ></textarea>
+            </div>
+          </div>
+          <div class="right-entry-fields">
+            <div class="field">
+              <label for="date">Date</label>
+              <input
+                type="date"
+                id="date"
+                class="validate"
+                name="date"
+                placeholder="Priority"
+                required
+              />
+            </div>
+            <div class="field">
+              <label for="priority">Priority</label>
+              <select id="priority" name="priority" class="validate">
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="project">Project</label>
+              <select id="project" name="project" class="validate">
+                <option value="Inbox" selected>Inbox</option>
+              </select>
+            </div>
+            <button type="submit">Submit</button>
+          </div>
+        </div>
+      </form>
+    </dialog>
+    <dialog id="edit-dialog">
+      <form id="edit-form">
+        <div class="form-heading">New Entry</div>
+        <div class="input-list">
+          <div class="left-entry-fields">
+            <div class="field">
+              <label for="title">Title</label>
+              <input
+                type="text"
+                id="title"
+                class="validate"
+                name="title"
+                placeholder="Title"
+                required
+              />
+            </div>
+            <div id="note-description" class="field">
+              <label for="details">Details</label>
+              <textarea
+                type="text"
+                id="details"
+                class="validate"
+                name="details"
+                placeholder="Details"
+                cols="40"
+                required
+              ></textarea>
+            </div>
+          </div>
+          <div class="right-entry-fields">
+            <div class="field">
+              <label for="date">Date</label>
+              <input
+                type="date"
+                id="date"
+                class="validate"
+                name="date"
+                placeholder="Priority"
+                required
+              />
+            </div>
+            <div class="field">
+              <label for="priority">Priority</label>
+              <select id="priority" name="priority" class="validate">
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="project">Project</label>
+              <select id="project" name="project" class="validate">
+                <option value="Inbox" selected>Inbox</option>
+              </select>
+            </div>
+            <button type="Edit">Edit</button>
+          </div>
+        </div>
+      </form>
+    </dialog>
+    <dialog id="view-dialog">
+      <div id="card-display">
+        <div id="title">Title</div>
+        <div id="view-content">
+          <div><strong>Project: </strong><span id="project"></span></div>
+          <div><strong>Priority: </strong><span id="priority"></span></div>
+          <div><strong>Due Date: </strong><span id="date"></span></div>
+          <br />
+          <div id="details"></div>
+        </div>
+      </div>
+    </dialog>
+  </body>
+</html>

@@ -1,0 +1,312 @@
+@font-face {
+  font-family: Montserrat;
+  src: url(./fonts/Montserrat-VariableFont_wght.ttf);
+}
+
+:root {
+  --primary-color: rgb(169, 198, 237);
+  --primary-lighter-color: rgb(106, 166, 236);
+  --light-grey: rgb(244, 244, 244);
+  --shaded-grey: rgb(232, 232, 232);
+  --font-grey: rgb(40, 40, 40);
+
+  --high-priority-color: rgb(237, 108, 108);
+  --medium-priority-color: rgb(255, 153, 0);
+  --low-priority-color: rgb(255, 221, 0);
+
+  --entry-bg-color: rgb(251, 251, 251);
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  color: var(--font-grey);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0;
+}
+
+/* Navigation Bar */
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--primary-color);
+  padding: 1rem;
+}
+
+.nav-group {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.nav-icon {
+  width: 1.5rem;
+  height: auto;
+  cursor: pointer;
+}
+
+#web-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/* Main Content */
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  flex: 1;
+}
+
+/* Main Content: Sidebar */
+
+#sidebar {
+  background-color: var(--light-grey);
+  padding: 3rem;
+}
+
+.sb-sect {
+  margin-bottom: 1rem;
+}
+
+.sb-sect-label {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 0.6rem;
+  margin-bottom: 0.1rem;
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  border-radius: 0.8rem;
+  padding: 0.6rem;
+  margin: 0.1rem 0;
+  cursor: pointer;
+}
+
+.tab:hover {
+  background-color: var(--shaded-grey);
+}
+
+/* Sidebar: Project Tabs */
+
+#add-project {
+  cursor: pointer;
+}
+
+.proj-tab {
+  justify-content: space-between;
+  word-break: break-word;
+}
+
+.proj-tab .trash-proj {
+  visibility: hidden;
+}
+
+.proj-tab:hover .trash-proj {
+  visibility: visible;
+}
+
+/* Todo Content */
+
+#todo-content {
+  flex: 1;
+  padding: 3rem;
+  word-break: break-word;
+}
+
+#todo-heading {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+/* Todo Content: List */
+
+#list {
+  padding: 1rem 0;
+}
+
+.card {
+  display: flex;
+  background-color: var(--entry-bg-color);
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex: 1;
+  font-size: 1.1rem;
+  padding: 0.5rem;
+}
+
+.info input[type="checkbox"] {
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.entry-item,
+.entry-details {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.entry-item {
+  word-wrap: break-word;
+}
+
+.entry-details {
+  word-break: keep-all;
+}
+
+.priority-color {
+  padding: 0.1rem;
+}
+
+.info button {
+  background-color: white;
+  border-radius: 0.2rem;
+  padding: 0.3rem;
+}
+
+.due-date {
+  font-size: 1rem;
+  color: var(--primary-lighter-color);
+}
+
+.entry-icon {
+  cursor: pointer;
+}
+
+/* Dialogs & Forms */
+
+dialog {
+  border: 0;
+  border-radius: 0.5rem;
+  padding: 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-heading {
+  background-color: var(--primary-color);
+  font-size: 1.3rem;
+  font-weight: 600;
+  padding: 1.2rem 1.2rem;
+}
+
+.divider {
+  background-color: var(--shaded-grey);
+  padding: 0.05rem;
+}
+
+.input-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.5rem;
+}
+
+textarea,
+input[type="date"],
+input[type="text"],
+select {
+  font-size: 1rem;
+  background-color: transparent;
+  border: 0.1rem solid var(--shaded-grey);
+  border-radius: 0.2rem;
+  padding: 0.8rem;
+  outline: none;
+}
+
+button {
+  align-self: center;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.05rem;
+  background-color: transparent;
+  border: 0.1rem solid var(--primary-color);
+  border-radius: 0.5rem;
+  padding: 0.8rem 1rem;
+  width: 100%;
+  cursor: pointer;
+}
+
+/* Edit + Entry Dialogs & Forms */
+
+#entry-form .input-list,
+#edit-form .input-list {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.left-entry-fields,
+.right-entry-fields {
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+  gap: 1rem;
+  flex: 1;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+label {
+  font-weight: 500;
+}
+
+#note-description {
+  flex: 1;
+}
+
+textarea {
+  resize: vertical;
+  flex: 1;
+}
+
+#entry-form select,
+#edit-form select {
+  appearance: none;
+}
+
+/* View Dialog */
+#view-dialog {
+  width: 40rem;
+}
+
+#view-dialog #title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  background-color: var(--primary-color);
+  padding: 1.2rem 1.2rem;
+  word-wrap: break-word;
+}
+
+#view-content {
+  padding: 1rem;
+  word-wrap: break-word;
+}
+
+#card-display strong {
+  font-weight: 600;
+}
