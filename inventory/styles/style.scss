@@ -1,0 +1,60 @@
+@font-face {
+  font-family: Montserrat;
+  src: url('/fonts/Montserrat/Montserrat-VariableFont_wght.ttf');
+}
+
+:root {
+  --min-spacer: 4px;
+  --tiny-spacer: 8px;
+  --small-spacer: 16px;
+  --spacer: 24px;
+  --medium-spacer: 48px;
+  --large-spacer: 80px;
+
+  --primary-font-color: #474747;
+
+  --primary-color: #EDEAE5;
+
+  --primary-shadow-color: #9F9D99;
+  --dark-shadow-color: #808080;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: Montserrat;
+  font-size: 1rem;
+  color: var(--primary-font-color);
+  height: 100vh;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.75rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+p {
+  font-size: 1rem;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}

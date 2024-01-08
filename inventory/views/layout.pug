@@ -1,0 +1,16 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/stylesheets/index.css')
+  body
+    div(id='header')
+      h1
+        a(href='/') needle + groove
+      div(id='links')
+        h3
+          a(href='/inventory/genres') genres 
+        h3
+          a(href='/inventory/albums') albums
+    block content
